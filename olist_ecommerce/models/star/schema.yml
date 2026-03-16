@@ -1,0 +1,129 @@
+version: 2
+
+models:
+#1
+  - name: dim_customers
+    description: "Dimension table for customers."
+    columns:
+      - name: customer_id
+        description: "The primary key for this table (one customer id per order)"
+        tests:
+          - unique
+          - not_null
+      - name: customer_unique_id
+        description: "The unique identifier for each customer"
+        tests:
+          - not_null
+      - name: zip_code_prefix
+        description: "Foreign key to the geolocation dimension table"
+        tests:
+          - not_null
+
+#2
+  - name: dim_sellers
+    description: "Dimension table for sellers."
+    columns:
+      - name: seller_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: zip_code_prefix
+        description: "The foreign key to the geolocation fact table"
+        tests:
+          - not_null
+
+#3
+  - name: dim_products
+    description: "Dimension table for products."
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: category_name
+        description: "The category name for the product"
+      - name: category_name_english
+        description: "The English name for the product category"
+      - name: name_length
+        description: "The length of the product name"
+      - name: description_length
+        description: "The length of the product description"
+      - name: photos_qty
+        description: "The number of photos for the product"
+      - name: weight_g
+        description: "The weight of the product"
+      - name: length_cm
+        description: "The length of the product"
+      - name: height_cm
+        description: "The height of the product"
+      - name: width_cm
+        description: "The width of the product"
+
+
+#4
+  - name: dim_date
+    description: "Dimension table for dates."
+    columns:
+      - name: date_key
+        description: "The primary key for this table (YYYYMMDD surrogate key)"
+        tests:
+          - unique
+          - not_null
+      - name: full_date
+        description: "The actual date"
+        tests:
+          - unique     
+          - not_null
+      - name: year
+        description: "The year for the date"
+        tests:
+          - not_null
+      - name: quarter
+        description: "The quarter for the date"
+        tests:      
+          - not_null
+      - name: month
+        description: "The month for the date"
+        tests:
+          - not_null
+      - name: month_name
+        description: "The month name for the date (January, February, etc.)"
+        tests:
+          - not_null
+      - name: year_month
+        description: "The year and month for the date (YYYY-MM format)"
+        tests:
+          - not_null
+      - name: week_of_year
+        description: "The week of the year for the date"
+        tests:
+          - not_null
+      - name: day_of_month
+        description: "The day for the month for the date (1-31)"
+        tests:
+          - not_null
+      - name: day_of_week
+        description: "The day of the week for the date (Monday, Tuesday, etc.)"
+        tests:
+          - not_null
+      - name: is_weekend
+        description: "Whether the date is a weekend (Sat/Sun) or not"
+        tests:
+          - not_null  
+
+#5
+  - name: dim_payment_types
+    description: "Dimension table for payment types."
+    columns:
+      - name: payment_type_key
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: payment_type
+        description: "The name of the payment type"
+        tests:
+          - unique
+          - not_null 

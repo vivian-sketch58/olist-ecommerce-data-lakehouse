@@ -1,0 +1,213 @@
+version: 2 # dbt only supports version 2 of the schema.yml format
+
+models:
+#1
+  - name: fact_geolocation
+    description: "Fact table for geolocation."
+    columns:
+      - name: location_key
+        description: "The primary key for this table (first 5 digits of zip code)"
+        tests:
+          - unique
+          - not_null
+      - name: latitude
+        description: "The latitude for the geolocation"
+        tests:    
+          - not_null
+      - name: longitude
+        description: "The longitude for the geolocation"
+        tests:      
+          - not_null
+      - name: city
+        description: "The city for the geolocation"
+        tests:
+          - not_null
+      - name: state
+        description: "The state for the geolocation"
+        tests:
+          - not_null  
+#2
+  - name: fact_order_items
+    description: "Fact table for order items. Grain: one row = one product in one order"
+    columns:
+      - name: order_item_id
+        description: "The primary key for this table"
+        tests:
+          - not_null
+      - name: order_id
+        description: "The foreign key to the order dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_orders')
+                field: order_id
+      - name: product_id
+        description: "The foreign key to the product dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+      - name: seller_id
+        description: "The foreign key to the seller dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_sellers')
+                field: seller_id
+      - name: shipping_limit_date_key
+        description: "The foreign key to the date dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: shipping_limit_ts
+        description: "The timestamp for the shipping limit"
+        tests:
+          - not_null
+      - name: price
+        description: "The price of the product at the time of the order"
+        tests:
+          - not_null
+      - name: freight_value
+        description: "The freight value for the order item"
+        tests:
+          - not_null
+#3        
+  - name: fact_orders
+    description: "Fact table for orders. Grain: one row = one order"
+    columns:
+      - name: order_id
+        description: "The primary key for this table (order_id from the raw_orders table)"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "The foreign key to the customers dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+      - name: purchase_date_key
+        description: "The foreign key to the date dimension table"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: approved_date_key
+        description: "The foreign key to the date dimension table"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: carrier_date_key
+        description: "The foreign key to the date dimension table"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: delivered_date_key
+        description: "The foreign key to the date dimension table"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: estimated_delivery_date_key
+        description: "The foreign key to the date dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: order_status
+        description: "The status of the order"
+        tests:
+          - not_null
+#4
+  - name: fact_payments
+    description: "Fact table for orders. Grain: one row = one order"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_orders')
+                field: order_id
+      - name: payment_seq
+        description: "The number of installments for the payment"
+        tests:
+          - not_null
+      - name: payment_type_key
+        description: "The foreign key to the payment types dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_payment_types')
+                field: payment_type_key
+      - name: payment_installments
+        description: "The number of installments for the payment"
+        tests:
+          - not_null
+      - name: payment_value
+        description: "The amount of the payment"
+        tests:
+          - not_null
+#5
+  - name: fact_reviews
+    description: "Fact table for customer reviews. Grain: one row = one customer review"
+    columns:
+      - name: review_id
+        description: "The primary key for this table"
+        tests:
+          - not_null
+      - name: order_id
+        description: "The foreign key to the orders dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_orders')
+                field: order_id
+      - name: review_score
+        description: "The score given by the customer for the review"
+        tests:
+          - not_null
+      - name: comment_title
+        description: "The title of the customer's review"
+        tests:
+          - not_null
+      - name: comment_message
+        description: "The message of the customer's review"
+        tests:
+          - not_null
+      - name: review_date_key
+        description: "The foreign key to the date dimension table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: answer_date_key
+        description: "The date when the customer answered the review"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key

@@ -1,0 +1,18 @@
+# dbt artifacts
+target/
+dbt_packages/
+logs/
+
+# Sensitive credentials
+profiles.yml
+.env
+
+# Python virtual environment
+venv/
+# Meltano files
+.meltano/
+
+# Python/System files
+__pycache__/
+.DS_Store
+

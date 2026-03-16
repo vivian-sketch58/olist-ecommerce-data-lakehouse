@@ -1,0 +1,136 @@
+[0m23:28:00.003272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd1f7ca2690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd1f80430d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd1f8043410>]}
+
+
+============================== 23:28:00.007075 | aff7eb1a-b355-4eed-a3d9-4b87b2ea9870 ==============================
+[0m23:28:00.007075 [info ] [MainThread]: Running with dbt=1.10.9
+[0m23:28:00.007616 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'partial_parse': 'True', 'target_path': 'None', 'warn_error': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'quiet': 'False', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init dbt-olist', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'cache_selected_only': 'False', 'log_path': 'logs', 'profiles_dir': '/home/vivian/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'debug': 'False', 'static_parser': 'True', 'write_json': 'True', 'printer_width': '80', 'introspect': 'True'}
+[0m23:29:37.389903 [debug] [MainThread]: Starter project path: /home/vivian/miniconda3/envs/elt/lib/python3.11/site-packages/dbt/include/starter_project
+[0m23:29:37.411563 [info ] [MainThread]: 
+Your new dbt project "olist_ecommerce" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:29:37.412096 [info ] [MainThread]: Setting up your profile.
+[0m23:38:34.488293 [info ] [MainThread]: Profile olist_ecommerce written to /home/vivian/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:38:34.491780 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 634.55347, "process_in_blocks": "422568", "process_kernel_time": 7.631206, "process_mem_max_rss": "368304", "process_out_blocks": "88", "process_user_time": 9.134639}
+[0m23:38:34.493812 [debug] [MainThread]: Command `dbt init` succeeded at 23:38:34.493451 after 634.56 seconds
+[0m23:38:34.495012 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd1f7d20610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd1f7d21790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd1fc388910>]}
+[0m23:38:34.496201 [debug] [MainThread]: Flushing usage events
+[0m23:38:35.739777 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:39:28.586547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b5b54c6290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b5b54ad3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b5b54ad050>]}
+
+
+============================== 23:39:28.590984 | a05ef2f0-efbf-40bf-9402-301efc49e996 ==============================
+[0m23:39:28.590984 [info ] [MainThread]: Running with dbt=1.10.9
+[0m23:39:28.591636 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'use_colors': 'True', 'write_json': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'empty': 'None', 'printer_width': '80', 'fail_fast': 'False', 'quiet': 'False', 'invocation_command': 'dbt debug', 'profiles_dir': '/home/vivian/.dbt', 'version_check': 'True', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'debug': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'target_path': 'None', 'log_path': 'logs'}
+[0m23:39:28.616802 [info ] [MainThread]: dbt version: 1.10.9
+[0m23:39:28.617339 [info ] [MainThread]: python version: 3.11.14
+[0m23:39:28.617931 [info ] [MainThread]: python path: /home/vivian/miniconda3/envs/elt/bin/python
+[0m23:39:28.618334 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m23:39:44.537651 [info ] [MainThread]: Using profiles dir at /home/vivian/.dbt
+[0m23:39:44.538340 [info ] [MainThread]: Using profiles.yml file at /home/vivian/.dbt/profiles.yml
+[0m23:39:44.538982 [info ] [MainThread]: Using dbt_project.yml file at /home/vivian/M2-olist-data-engineering/dbt_project.yml
+[0m23:39:44.539586 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m23:39:44.540177 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 16.022814, "process_in_blocks": "288448", "process_kernel_time": 7.96123, "process_mem_max_rss": "368400", "process_out_blocks": "16", "process_user_time": 9.590838}
+[0m23:39:44.540753 [debug] [MainThread]: Command `dbt debug` failed at 23:39:44.540651 after 16.02 seconds
+[0m23:39:44.541127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b5b54aee50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b5b5527a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b5b5765710>]}
+[0m23:39:44.541533 [debug] [MainThread]: Flushing usage events
+[0m23:39:45.671189 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:06:56.285193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76f767cbe590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76f767d1ed90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76f767d1e610>]}
+
+
+============================== 00:06:56.288885 | 491aeaf0-79f6-439b-a6ee-6c5d81e8fe2a ==============================
+[0m00:06:56.288885 [info ] [MainThread]: Running with dbt=1.10.9
+[0m00:06:56.289425 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'log_format': 'default', 'static_parser': 'True', 'partial_parse': 'True', 'version_check': 'True', 'profiles_dir': '/home/vivian/.dbt', 'indirect_selection': 'eager', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'warn_error': 'None', 'quiet': 'False', 'introspect': 'True', 'empty': 'False', 'use_colors': 'True', 'cache_selected_only': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt snapshot', 'log_path': 'logs', 'printer_width': '80'}
+[0m00:06:56.289964 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/vivian/M2-olist-data-engineering/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:06:56.291843 [debug] [MainThread]: Resource report: {"command_name": "snapshot", "command_success": false, "command_wall_clock_time": 0.068204075, "process_in_blocks": "45184", "process_kernel_time": 0.432515, "process_mem_max_rss": "98796", "process_out_blocks": "8", "process_user_time": 1.37478}
+[0m00:06:56.292298 [debug] [MainThread]: Command `dbt snapshot` failed at 00:06:56.292198 after 0.07 seconds
+[0m00:06:56.292667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76f767ca6e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76f767d1e750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76f76c4bfc50>]}
+[0m00:06:56.293054 [debug] [MainThread]: Flushing usage events
+[0m00:06:57.553166 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:08:29.585854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c3a7e71fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c3a7e72190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c3a7e71f90>]}
+
+
+============================== 00:08:29.590291 | 15168269-e140-4969-a283-ec02ad2355e7 ==============================
+[0m00:08:29.590291 [info ] [MainThread]: Running with dbt=1.10.9
+[0m00:08:29.590844 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'no_print': 'None', 'write_json': 'True', 'profiles_dir': '/home/vivian/.dbt', 'log_format': 'default', 'debug': 'False', 'warn_error': 'None', 'invocation_command': 'dbt clean', 'log_path': 'logs', 'fail_fast': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'use_colors': 'True', 'introspect': 'True', 'target_path': 'None', 'empty': 'None', 'cache_selected_only': 'False', 'quiet': 'False'}
+[0m00:08:29.591443 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/vivian/M2-olist-data-engineering/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:08:29.593382 [debug] [MainThread]: Resource report: {"command_name": "clean", "command_success": false, "command_wall_clock_time": 0.07073451, "process_in_blocks": "63160", "process_kernel_time": 0.343988, "process_mem_max_rss": "98852", "process_out_blocks": "8", "process_user_time": 1.351953}
+[0m00:08:29.593943 [debug] [MainThread]: Command `dbt clean` failed at 00:08:29.593842 after 0.07 seconds
+[0m00:08:29.594320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c3a7e71f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c3a7e4d7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c3a7e4d290>]}
+[0m00:08:29.594762 [debug] [MainThread]: Flushing usage events
+[0m00:08:30.713545 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:09:41.026309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755447c75010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755447cef350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755448016f50>]}
+
+
+============================== 00:09:41.031735 | bf5148ad-daad-47ee-aa03-3448df5d6128 ==============================
+[0m00:09:41.031735 [info ] [MainThread]: Running with dbt=1.10.9
+[0m00:09:41.032310 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'cache_selected_only': 'False', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'log_cache_events': 'False', 'partial_parse': 'True', 'use_colors': 'True', 'write_json': 'True', 'indirect_selection': 'eager', 'debug': 'False', 'printer_width': '80', 'quiet': 'False', 'profiles_dir': '/home/vivian/.dbt', 'log_format': 'default', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'warn_error': 'None', 'fail_fast': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'version_check': 'True', 'log_path': 'logs'}
+[0m00:09:41.056860 [info ] [MainThread]: dbt version: 1.10.9
+[0m00:09:41.057366 [info ] [MainThread]: python version: 3.11.14
+[0m00:09:41.057905 [info ] [MainThread]: python path: /home/vivian/miniconda3/envs/elt/bin/python
+[0m00:09:41.058295 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m00:09:56.631021 [info ] [MainThread]: Using profiles dir at /home/vivian/.dbt
+[0m00:09:56.631485 [info ] [MainThread]: Using profiles.yml file at /home/vivian/.dbt/profiles.yml
+[0m00:09:56.631874 [info ] [MainThread]: Using dbt_project.yml file at /home/vivian/M2-olist-data-engineering/dbt_project.yml
+[0m00:09:56.632285 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m00:09:56.632823 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 15.680527, "process_in_blocks": "361944", "process_kernel_time": 7.604105, "process_mem_max_rss": "368772", "process_out_blocks": "16", "process_user_time": 9.310334}
+[0m00:09:56.633367 [debug] [MainThread]: Command `dbt debug` failed at 00:09:56.633272 after 15.68 seconds
+[0m00:09:56.633742 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755447cef990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755447cef290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75544812a890>]}
+[0m00:09:56.634121 [debug] [MainThread]: Flushing usage events
+[0m00:09:57.674647 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:18:40.184187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7654cd575750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7654cd561f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7654cd562390>]}
+
+
+============================== 23:18:40.189720 | 826dc4fa-92e8-4fc3-acd8-3403b8315691 ==============================
+[0m23:18:40.189720 [info ] [MainThread]: Running with dbt=1.10.9
+[0m23:18:40.190422 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'target_path': 'None', 'introspect': 'True', 'quiet': 'False', 'static_parser': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'fail_fast': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'log_path': 'logs', 'log_format': 'default', 'use_experimental_parser': 'False', 'no_print': 'None', 'profiles_dir': '/home/vivian/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt docs generate --static', 'cache_selected_only': 'False', 'empty': 'None'}
+[0m23:18:40.190901 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/vivian/M2-olist-data-engineering/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:18:40.192790 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.07118497, "process_in_blocks": "100880", "process_kernel_time": 0.540966, "process_mem_max_rss": "99104", "process_out_blocks": "8", "process_user_time": 1.368327}
+[0m23:18:40.193276 [debug] [MainThread]: Command `dbt docs generate` failed at 23:18:40.193178 after 0.07 seconds
+[0m23:18:40.193656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7654cd5e0790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7654cd574e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7654cd563fd0>]}
+[0m23:18:40.194052 [debug] [MainThread]: Flushing usage events
+[0m23:18:41.336805 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:19:30.554566 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7048bb3cf890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7048bb437bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7048bb3cd1d0>]}
+
+
+============================== 23:19:30.559119 | 458e8d77-64fb-4335-8193-f32300dd83f7 ==============================
+[0m23:19:30.559119 [info ] [MainThread]: Running with dbt=1.10.9
+[0m23:19:30.559687 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'invocation_command': 'dbt docs generate --static', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'use_colors': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'target_path': 'None', 'empty': 'None', 'printer_width': '80', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_format': 'default', 'fail_fast': 'False', 'write_json': 'True', 'log_path': 'logs', 'no_print': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'profiles_dir': '/home/vivian/.dbt', 'static_parser': 'True', 'version_check': 'True', 'introspect': 'True'}
+[0m23:19:30.560210 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/vivian/M2-olist-data-engineering/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:19:30.561936 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.07544928, "process_in_blocks": "100736", "process_kernel_time": 0.506566, "process_mem_max_rss": "98916", "process_out_blocks": "8", "process_user_time": 1.480732}
+[0m23:19:30.562414 [debug] [MainThread]: Command `dbt docs generate` failed at 23:19:30.562316 after 0.08 seconds
+[0m23:19:30.562777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7048bb3b92d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7048bb3bb610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7048bb3bbfd0>]}
+[0m23:19:30.563154 [debug] [MainThread]: Flushing usage events
+[0m23:19:31.621673 [debug] [MainThread]: An error was encountered while trying to flush usage events

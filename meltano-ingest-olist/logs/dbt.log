@@ -1,0 +1,6 @@
+[0m23:25:11.694714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7700c67bab10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7700c6b5ad90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7700c67ae0d0>]}
+
+
+============================== 23:25:11.700198 | 1e9fe9d1-6eaf-4814-b034-015c804206d4 ==============================
+[0m23:25:11.700198 [info ] [MainThread]: Running with dbt=1.10.9
+[0m23:25:11.700717 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'profiles_dir': '/home/vivian/.dbt', 'target_path': 'None', 'partial_parse': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'printer_width': '80', 'debug': 'False', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init', 'introspect': 'True', 'warn_error': 'None', 'static_parser': 'True', 'empty': 'None', 'no_print': 'None', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'use_colors': 'True'}

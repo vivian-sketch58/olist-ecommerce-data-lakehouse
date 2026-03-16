@@ -1,0 +1,114 @@
+version: 2
+
+models:
+#1
+  - name: mart_sales_summary
+    description: Daily sales metrics including revenue, orders and average order value for BI dashboards.
+    columns:
+
+      - name: order_date
+        description: date when the order was placed.
+        tests:
+          - not_null
+
+      - name: total_orders
+        description: Total number of orders for the day.
+        tests:
+          - not_null
+
+      - name: total_revenue
+        description: Total payment value collected for the day.
+
+      - name: avg_order_value
+        description: Average value per order.
+
+#2
+
+  - name: mart_product_performance
+    description: Product category performance including items sold, revenue and review scores.
+    columns:
+
+      - name: category_name_english
+        description: Product category english name.
+        tests:
+          - not_null
+
+      - name: items_sold
+        description: Total number of items sold.
+
+      - name: revenue
+        description: Total revenue generated from the category.
+
+      - name: avg_review_score
+        description: Average customer review score for the category.
+
+#3
+
+  - name: mart_customer_geography
+    description: Customer geographic analysis showing order counts and revenue by city and state.
+    columns:
+
+      - name: state
+        description: Customer state.
+        tests:
+          - not_null
+
+      - name: city
+        description: Customer city.
+
+      - name: total_orders
+        description: Total number of orders from this location.
+
+      - name: revenue
+        description: Total revenue generated from this location.
+
+#4
+
+  - name: mart_delivery_performance
+    description: Delivery performance mart containing customer and seller location, order date and delivery duration.
+    columns:
+
+      - name: order_id
+        description: Unique identifier for the order.
+        tests:
+          - not_null          
+
+      - name: customer_city
+        description: City where the customer is located.
+
+      - name: customer_state
+        description: State where the customer is located.
+
+      - name: seller_city
+        description: City where the seller is located.
+
+      - name: seller_state
+        description: State where the seller is located.
+
+      - name: order_date
+        description: date when the order was placed.
+
+      - name: delivery_days
+        description: Number of days between purchase and delivery.
+
+
+#5
+
+  - name: mart_customer_analytics
+    description: Customer level metrics including number of orders and total spending.
+    columns:
+
+      - name: customer_id
+        description: Unique identifier for the customer.
+        tests:
+          - not_null
+          - unique
+
+      - name: total_orders
+        description: Total number of orders placed by the customer.
+
+      - name: total_spent
+        description: Total lifetime spending of the customer.
+
+      - name: avg_order_value
+        description: Average order value for the customer.

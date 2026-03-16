@@ -1,0 +1,57 @@
+default_environment: dev
+project_id: 019cd0c8-4e6d-71d3-8065-7e46a4e22b0e
+environments:
+- name: dev
+- name: staging
+- name: prod
+python: python3.11
+plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: raw_customers
+        path: ../data/raw/olist_customers_dataset.csv
+        keys: [customer_id]
+      - entity: raw_geolocation
+        path: ../data/raw/olist_geolocation_dataset.csv
+        keys: [geolocation_zip_code_prefix, geolocation_lat, geolocation_lng]
+      - entity: raw_orders
+        path: ../data/raw/olist_orders_dataset.csv
+        keys: [order_id]
+      - entity: raw_order_items
+        path: ../data/raw/olist_order_items_dataset.csv
+        keys: [order_id, order_item_id]
+      - entity: raw_payments
+        path: ../data/raw/olist_order_payments_dataset.csv
+        keys: [order_id, payment_sequential]
+      - entity: raw_reviews
+        path: ../data/raw/olist_order_reviews_dataset.csv
+        keys: [review_id]
+      - entity: raw_products
+        path: ../data/raw/olist_products_dataset.csv
+        keys: [product_id]
+      - entity: raw_sellers
+        path: ../data/raw/olist_sellers_dataset.csv
+        keys: [seller_id]
+      - entity: raw_product_category
+        path: ../data/raw/product_category_name_translation.csv
+        keys: [product_category_name]
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
+  - name: target-bigquery
+    variant: z3z1ma
+    pip_url: git+https://github.com/z3z1ma/target-bigquery.git setuptools<70
+    config:
+      batch_size: 104857600
+      credentials_path: /home/vivian/marine-bebop-488207-j2-516cd8f8ab0a.json
+      dataset: olist_raw
+      denormalized: true
+      flattening_enabled: true
+      flattening_max_depth: 1
+      method: batch_job
+      project: marine-bebop-488207-j2

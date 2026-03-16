@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: olist_raw
+    description: "Source data for the Olist e-commerce dataset, stored in BigQuery."
+    database: marine-bebop-488207-j2
+    tables:
+      - name: raw_customers
+      - name: raw_geolocation
+      - name: raw_order_items
+      - name: raw_orders
+      - name: raw_payments
+      - name: raw_product_category
+      - name: raw_products
+      - name: raw_reviews
+      - name: raw_sellers
