@@ -1,0 +1,2876 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <BasicButtonObjectTextSupport />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <RelationshipCalculations />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='dim_date' inline='true' name='federated.04fw5p90hdv65j1etj24t0p75c58' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='dim_date' name='textscan.1yy4mhu1ky49tr0zzgzl513g1pfp'>
+            <connection class='textscan' directory='C:/Users/Family/Downloads' filename='dim_date.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='sales_summary' name='textscan.07au9su174qyhu13ei8eo1p0a1pa'>
+            <connection class='textscan' directory='C:/Users/Family/Downloads' filename='sales_summary.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1yy4mhu1ky49tr0zzgzl513g1pfp' name='dim_date.csv' table='[dim_date#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='date_key' ordinal='0' />
+              <column datatype='date' name='full_date' ordinal='1' />
+              <column datatype='integer' name='year' ordinal='2' />
+              <column datatype='integer' name='quarter' ordinal='3' />
+              <column datatype='integer' name='month' ordinal='4' />
+              <column datatype='string' name='month_name' ordinal='5' />
+              <column datatype='string' name='year_month' ordinal='6' />
+              <column datatype='integer' name='week_of_year' ordinal='7' />
+              <column datatype='integer' name='day_of_month' ordinal='8' />
+              <column datatype='integer' name='day_of_week' ordinal='9' />
+              <column datatype='string' name='day_name' ordinal='10' />
+              <column datatype='boolean' name='is_weekend' ordinal='11' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1yy4mhu1ky49tr0zzgzl513g1pfp' name='marts_sales_summary.csv' table='[marts_sales_summary#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='order_date' ordinal='0' />
+              <column datatype='integer' name='total_orders' ordinal='1' />
+              <column datatype='real' name='total_revenue' ordinal='2' />
+              <column datatype='real' name='avg_order_value' ordinal='3' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[marts_sales_summary.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[date_key]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>date_key</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>full_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[full_date]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>full_date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quarter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[quarter]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>quarter</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[month_name]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>month_name</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year_month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[year_month]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>year_month</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>week_of_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[week_of_year]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>week_of_year</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_of_month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day_of_month]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>day_of_month</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_of_week</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day_of_week]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>day_of_week</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_name]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>day_name</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_weekend</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_weekend]</local-name>
+            <parent-name>[dim_date.csv]</parent-name>
+            <remote-alias>is_weekend</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>order_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[order_date]</local-name>
+            <parent-name>[marts_sales_summary.csv]</parent-name>
+            <remote-alias>order_date</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_orders</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_orders]</local-name>
+            <parent-name>[marts_sales_summary.csv]</parent-name>
+            <remote-alias>total_orders</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_revenue]</local-name>
+            <parent-name>[marts_sales_summary.csv]</parent-name>
+            <remote-alias>total_revenue</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_order_value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_order_value]</local-name>
+            <parent-name>[marts_sales_summary.csv]</parent-name>
+            <remote-alias>avg_order_value</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='order_date_key' datatype='integer' name='[Calculation_1098187217629186]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='// Converts 2020-12-16 into 20201216&#13;&#10;INT(STR(YEAR([order_date])) + &#13;&#10;    IF MONTH([order_date]) &lt; 10 THEN &quot;0&quot; ELSE &quot;&quot; END + STR(MONTH([order_date])) + &#13;&#10;    IF DAY([order_date]) &lt; 10 THEN &quot;0&quot; ELSE &quot;&quot; END + STR(DAY([order_date])))' />
+      </column>
+      <column caption='Year_abc' datatype='string' name='[Calculation_1098187242323975]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='STR([year])' />
+      </column>
+      <column caption='last_sales_mth' datatype='boolean' name='[Calculation_1098187251060749]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='// This checks if the date has any sales data attached to it&#13;&#10;LAST() = 0'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='MoM%_pos' datatype='real' name='[Calculation_1098187260973071]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Calculation_1098187262136336] &gt; 0 THEN [Calculation_1098187262136336] END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='MoM%' datatype='real' name='[Calculation_1098187262136336]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(ZN(SUM([total_revenue])) - LOOKUP(ZN(SUM([total_revenue])), -1)) / ABS(LOOKUP(ZN(SUM([total_revenue])), -1))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='MoM_neg' datatype='real' name='[Calculation_1098187262513169]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Calculation_1098187262136336] &lt;= 0 THEN [Calculation_1098187262136336] END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Avg_orders_per_mth' datatype='real' default-format='n#,##0;-#,##0' name='[Calculation_1098187289452563]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ AVG({ FIXED DATETRUNC(&apos;month&apos;, [order_date]) : COUNT([__tableau_internal_object_id__].[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]) }) }' />
+      </column>
+      <column caption='Avg_orders_per_day' datatype='real' default-format='n#,##0;-#,##0' name='[Calculation_1098187290271764]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ AVG({ FIXED DATETRUNC(&apos;day&apos;, [order_date]) : COUNT([__tableau_internal_object_id__].[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]) }) }' />
+      </column>
+      <column caption='Revenue YoY%' datatype='real' default-format='p0.0%' name='[Calculation_1098187294666773]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(SUM([Calculation_1098187296120855]) - SUM([Calculation_1098187295821846])) / SUM([Calculation_1098187295821846])' />
+      </column>
+      <column caption='Revenue LY (2017)' datatype='real' name='[Calculation_1098187295821846]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ FIXED [order_date] : SUM(IF YEAR([order_date]) = 2017 THEN [total_revenue] ELSE 0 END) }' />
+      </column>
+      <column caption='Revenue CY (2018)' datatype='real' name='[Calculation_1098187296120855]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ FIXED [order_date] : SUM(IF YEAR([order_date]) = 2018 THEN [total_revenue] ELSE 0 END) }' />
+      </column>
+      <column caption='dim_date.csv' datatype='table' name='[__tableau_internal_object_id__].[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]' role='measure' type='quantitative' />
+      <column caption='marts_sales_summary.csv' datatype='table' name='[__tableau_internal_object_id__].[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]' role='measure' type='quantitative' />
+      <column caption='Avg Order Value' datatype='real' name='[avg_order_value]' role='measure' type='quantitative' />
+      <column caption='Date Key' datatype='integer' name='[date_key]' role='dimension' type='ordinal' />
+      <column caption='Day Name' datatype='string' name='[day_name]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;Saturday&quot;' value='Sunday' />
+          <alias key='&quot;Sunday&quot;' value='Saturday' />
+        </aliases>
+      </column>
+      <column caption='Day Of Month' datatype='integer' name='[day_of_month]' role='dimension' type='quantitative' />
+      <column caption='Day Of Week' datatype='integer' name='[day_of_week]' role='dimension' type='quantitative' />
+      <column caption='Full Date' datatype='date' name='[full_date]' role='dimension' type='ordinal' />
+      <column caption='Is Weekend' datatype='boolean' name='[is_weekend]' role='dimension' type='nominal' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Month Name' datatype='string' name='[month_name]' role='dimension' type='nominal' />
+      <column caption='Order Date' datatype='date' name='[order_date]' role='dimension' type='ordinal' />
+      <column caption='Quarter' datatype='integer' name='[quarter]' role='dimension' type='quantitative' />
+      <column caption='Total Orders' datatype='integer' name='[total_orders]' role='measure' type='quantitative' />
+      <column caption='Total Revenue' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+      <column caption='Week Of Year' datatype='integer' name='[week_of_year]' role='dimension' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column caption='Year Month' datatype='string' name='[year_month]' role='dimension' type='nominal' />
+      <column-instance column='[is_weekend]' derivation='None' name='[none:is_weekend:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/Family/Documents/My Tableau Repository/Datasources/Olist/dim_date.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='03/18/2026 03:18:18 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD' table='[Extract].[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]' type='table' />
+            <relation name='marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56' table='[Extract].[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]' type='table' />
+          </relation>
+          <refresh>
+            <refresh-event add-from-file-path='dim_date' increment-value='%null%' refresh-type='create' rows-inserted='2460' timestamp-start='2026-03-18 15:18:18.192' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>date_key</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[date_key]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>date_key</remote-alias>
+              <ordinal>0</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1827</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>full_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[full_date]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>full_date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1827</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>2</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>quarter</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[quarter]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>quarter</remote-alias>
+              <ordinal>3</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[month]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>month</remote-alias>
+              <ordinal>4</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[month_name]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>month_name</remote-alias>
+              <ordinal>5</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year_month</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[year_month]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>year_month</remote-alias>
+              <ordinal>6</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>60</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>week_of_year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[week_of_year]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>week_of_year</remote-alias>
+              <ordinal>7</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>53</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_of_month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[day_of_month]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>day_of_month</remote-alias>
+              <ordinal>8</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>31</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_of_week</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[day_of_week]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>day_of_week</remote-alias>
+              <ordinal>9</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_name]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>day_name</remote-alias>
+              <ordinal>10</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_weekend</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_weekend]</local-name>
+              <parent-name>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</parent-name>
+              <remote-alias>is_weekend</remote-alias>
+              <ordinal>11</ordinal>
+              <family>dim_date.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>order_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[order_date]</local-name>
+              <parent-name>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</parent-name>
+              <remote-alias>order_date</remote-alias>
+              <ordinal>12</ordinal>
+              <family>marts_sales_summary.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>633</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_orders</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_orders]</local-name>
+              <parent-name>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</parent-name>
+              <remote-alias>total_orders</remote-alias>
+              <ordinal>13</ordinal>
+              <family>marts_sales_summary.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>272</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_revenue]</local-name>
+              <parent-name>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</parent-name>
+              <remote-alias>total_revenue</remote-alias>
+              <ordinal>14</ordinal>
+              <family>marts_sales_summary.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>632</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>avg_order_value</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[avg_order_value]</local-name>
+              <parent-name>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</parent-name>
+              <remote-alias>avg_order_value</remote-alias>
+              <ordinal>15</ordinal>
+              <family>marts_sales_summary.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>632</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:is_weekend:nk]' type='palette'>
+            <map to='#a0cbe8'>
+              <bucket>false</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>true</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Singapore&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='order_date' />
+        <field-sort-custom-order field='Calculation_1098187251060749' />
+        <field-sort-custom-order field='Calculation_1098187250298892' />
+        <field-sort-custom-order field='Calculation_1098187217629186' />
+        <field-sort-custom-order field='Calculation_1098187260973071' />
+        <field-sort-custom-order field='Calculation_1098187216379905' />
+        <field-sort-custom-order field='total_orders' />
+        <field-sort-custom-order field='Calculation_1098187286573074' />
+        <field-sort-custom-order field='total_revenue' />
+        <field-sort-custom-order field='Calculation_1098187295821846' />
+        <field-sort-custom-order field='Calculation_1098187296120855' />
+        <field-sort-custom-order field='Calculation_1098187294666773' />
+        <field-sort-custom-order field='Calculation_1098187262136336' />
+        <field-sort-custom-order field='Calculation_1098187262513169' />
+        <field-sort-custom-order field='avg_order_value' />
+        <field-sort-custom-order field='join_key_int' />
+        <field-sort-custom-order field='join_key_str' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='dim_date.csv' id='dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD'>
+            <properties context=''>
+              <relation connection='textscan.1yy4mhu1ky49tr0zzgzl513g1pfp' name='dim_date.csv' table='[dim_date#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='date_key' ordinal='0' />
+                  <column datatype='date' name='full_date' ordinal='1' />
+                  <column datatype='integer' name='year' ordinal='2' />
+                  <column datatype='integer' name='quarter' ordinal='3' />
+                  <column datatype='integer' name='month' ordinal='4' />
+                  <column datatype='string' name='month_name' ordinal='5' />
+                  <column datatype='string' name='year_month' ordinal='6' />
+                  <column datatype='integer' name='week_of_year' ordinal='7' />
+                  <column datatype='integer' name='day_of_month' ordinal='8' />
+                  <column datatype='integer' name='day_of_week' ordinal='9' />
+                  <column datatype='string' name='day_name' ordinal='10' />
+                  <column datatype='boolean' name='is_weekend' ordinal='11' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD' table='[Extract].[dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD]' type='table' />
+            </properties>
+          </object>
+          <object caption='marts_sales_summary.csv' id='marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56'>
+            <properties context=''>
+              <relation connection='textscan.1yy4mhu1ky49tr0zzgzl513g1pfp' name='marts_sales_summary.csv' table='[marts_sales_summary#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='order_date' ordinal='0' />
+                  <column datatype='integer' name='total_orders' ordinal='1' />
+                  <column datatype='real' name='total_revenue' ordinal='2' />
+                  <column datatype='real' name='avg_order_value' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56' table='[Extract].[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[date_key]' />
+              <expression op='INT(STR(YEAR([order_date])) + &#13;&#10;    IF MONTH([order_date]) &lt; 10 THEN &quot;0&quot; ELSE &quot;&quot; END + STR(MONTH([order_date])) + &#13;&#10;    IF DAY([order_date]) &lt; 10 THEN &quot;0&quot; ELSE &quot;&quot; END + STR(DAY([order_date])))' />
+            </expression>
+            <first-end-point object-id='dim_date.csv_5B82C5055773497A9EE97E7F7C4361DD' />
+            <second-end-point object-id='marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='AoV'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000'>Average Order Value</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontsize='12'>Spikes in late 2017 (Black Friday), and Sept 2018</run>
+            <run>Æ&#10;&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dim_date' name='federated.04fw5p90hdv65j1etj24t0p75c58' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fw5p90hdv65j1etj24t0p75c58'>
+            <column-instance column='[avg_order_value]' derivation='Avg' name='[avg:avg_order_value:qk]' pivot='key' type='quantitative' />
+            <column caption='Avg Order Value' datatype='real' name='[avg_order_value]' role='measure' type='quantitative' />
+            <column caption='Full Date' datatype='date' name='[full_date]' role='dimension' type='ordinal' />
+            <column-instance column='[full_date]' derivation='Month-Trunc' name='[tmn:full_date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[tmn:full_date:qk]' field-type='quantitative' max='#2018-09-18 00:00:00#' min='#2017-01-01 13:57:20#' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' scope='rows' value='false' />
+            <format attr='title' class='0' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[tmn:full_date:qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Month of Full Date:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[tmn:full_date:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Avg Order Value:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]</rows>
+        <cols>[federated.04fw5p90hdv65j1etj24t0p75c58].[tmn:full_date:qk]</cols>
+      </table>
+      <simple-id uuid='{C2F3B3AA-E604-43FD-AC5D-02D025B7F065}' />
+    </worksheet>
+    <worksheet name='KPI_AOV'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dim_date' name='federated.04fw5p90hdv65j1etj24t0p75c58' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fw5p90hdv65j1etj24t0p75c58'>
+            <column-instance column='[avg_order_value]' derivation='Avg' name='[avg:avg_order_value:qk]' pivot='key' type='quantitative' />
+            <column caption='Avg Order Value' datatype='real' name='[avg_order_value]' role='measure' type='quantitative' />
+            <column caption='Is Weekend' datatype='boolean' name='[is_weekend]' role='dimension' type='nominal' />
+            <column-instance column='[avg_order_value]' derivation='Max' name='[max:avg_order_value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[avg_order_value]' derivation='Median' name='[med:avg_order_value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[avg_order_value]' derivation='Min' name='[min:avg_order_value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[is_weekend]' derivation='None' name='[none:is_weekend:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:is_weekend:nk]'>
+            <groupfilter function='level-members' level='[none:is_weekend:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:is_weekend:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' value='24' />
+            <format attr='color' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' value='#4e79a7' />
+            <format attr='font-weight' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' value='bold' />
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+            <format attr='text-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <tooltip column='[federated.04fw5p90hdv65j1etj24t0p75c58].[med:avg_order_value:qk]' />
+              <tooltip column='[federated.04fw5p90hdv65j1etj24t0p75c58].[min:avg_order_value:qk]' />
+              <tooltip column='[federated.04fw5p90hdv65j1etj24t0p75c58].[max:avg_order_value:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'> Order Value</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Median:	$<[federated.04fw5p90hdv65j1etj24t0p75c58].[med:avg_order_value:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[MIN:	$<[federated.04fw5p90hdv65j1etj24t0p75c58].[min:avg_order_value:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Max:	$<[federated.04fw5p90hdv65j1etj24t0p75c58].[max:avg_order_value:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontcolor='#4e79a7' fontsize='15'>Avg. Order Value</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#4e79a7' fontsize='20'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[avg:avg_order_value:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{DC98402C-EA0B-4EEC-9F98-BAFE05AD6562}' />
+    </worksheet>
+    <worksheet name='KPI_MoM%'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dim_date' name='federated.04fw5p90hdv65j1etj24t0p75c58' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fw5p90hdv65j1etj24t0p75c58'>
+            <column caption='Year_abc' datatype='string' name='[Calculation_1098187242323975]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='STR([year])' />
+            </column>
+            <column caption='last_sales_mth' datatype='boolean' name='[Calculation_1098187251060749]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='// This checks if the date has any sales data attached to it&#13;&#10;LAST() = 0'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='MoM%_pos' datatype='real' name='[Calculation_1098187260973071]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Calculation_1098187262136336] &gt; 0 THEN [Calculation_1098187262136336] END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='MoM%' datatype='real' name='[Calculation_1098187262136336]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='(ZN(SUM([total_revenue])) - LOOKUP(ZN(SUM([total_revenue])), -1)) / ABS(LOOKUP(ZN(SUM([total_revenue])), -1))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='MoM_neg' datatype='real' name='[Calculation_1098187262513169]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Calculation_1098187262136336] &lt;= 0 THEN [Calculation_1098187262136336] END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Full Date' datatype='date' name='[full_date]' role='dimension' type='ordinal' />
+            <column-instance column='[full_date]' derivation='Month' name='[mn:full_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[full_date]' derivation='MY' name='[my:full_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1098187242323975]' derivation='None' name='[none:Calculation_1098187242323975:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_revenue]' derivation='Sum' name='[pcdf:sum:total_revenue:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Columns' type='PctDiff'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column caption='Total Revenue' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1098187251060749]' derivation='User' name='[usr:Calculation_1098187251060749:nk:2]' pivot='key' type='nominal'>
+              <table-calc ordering-type='Columns' />
+            </column-instance>
+            <column-instance column='[Calculation_1098187260973071]' derivation='User' name='[usr:Calculation_1098187260973071:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' />
+              <table-calc field='[federated.04fw5p90hdv65j1etj24t0p75c58].[Calculation_1098187262136336]' ordering-type='Columns' />
+            </column-instance>
+            <column-instance column='[Calculation_1098187262513169]' derivation='User' name='[usr:Calculation_1098187262513169:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' />
+              <table-calc field='[federated.04fw5p90hdv65j1etj24t0p75c58].[Calculation_1098187262136336]' ordering-type='Columns' />
+            </column-instance>
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+            <column-instance column='[full_date]' derivation='Year' name='[yr:full_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[my:full_date:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[my:full_date:ok]' member='201701' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201702' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201703' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201704' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201705' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201706' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201707' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201708' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201709' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201710' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201711' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201712' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201801' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201802' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201803' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201804' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201805' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201806' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201807' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201808' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187251060749:nk:2]'>
+            <groupfilter function='member' level='[usr:Calculation_1098187251060749:nk:2]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[yr:full_date:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[yr:full_date:ok]' member='2016' />
+              <groupfilter function='member' level='[yr:full_date:ok]' member='2017' />
+              <groupfilter function='member' level='[yr:full_date:ok]' member='2018' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[yr:full_date:ok]</column>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[my:full_date:ok]</column>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187251060749:nk:2]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='color' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk]' value='#4e79a7' />
+            <format attr='font-weight' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk]' value='bold' />
+            <format attr='font-size' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk]' value='24' />
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk]' value='p0.0%' />
+            <format attr='text-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk]' value='center' />
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187260973071:qk]' value='*▲ 0.0%; ▼ 0.0%' />
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187262513169:qk]' value='*▲ 0.0%; ▼ 0.0%' />
+            <format attr='text-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187262513169:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187262513169:qk]' value='center' />
+            <format attr='text-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187260973071:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187260973071:qk]' value='center' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]' value='false' />
+            <format attr='display' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[mn:full_date:ok]' value='false' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' center='0.0' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk]' num-steps='2' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187262513169:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187260973071:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Month:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[mn:full_date:ok]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Year:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#4e79a7' fontsize='15'>Revenue MoM %</run>
+                <run fontcolor='#4e79a7' fontsize='15'>Æ </run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#a60000' fontsize='20'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187262513169:qk]>]]></run>
+                <run bold='true' fontcolor='#59a14f' fontsize='20'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187260973071:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#4e79a7' fontsize='12'>Æ </run>
+                <run bold='true' fontcolor='#4e79a7' fontsize='12'>(Aug v.s July 2018 )</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk] / [federated.04fw5p90hdv65j1etj24t0p75c58].[mn:full_date:ok])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{C36B8764-7D91-467F-A8EF-6537AD060A52}' />
+    </worksheet>
+    <worksheet name='KPI_Order Volume'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dim_date' name='federated.04fw5p90hdv65j1etj24t0p75c58' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fw5p90hdv65j1etj24t0p75c58'>
+            <column caption='Avg_orders_per_mth' datatype='real' default-format='n#,##0;-#,##0' name='[Calculation_1098187289452563]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ AVG({ FIXED DATETRUNC(&apos;month&apos;, [order_date]) : COUNT([__tableau_internal_object_id__].[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]) }) }' />
+            </column>
+            <column caption='Avg_orders_per_day' datatype='real' default-format='n#,##0;-#,##0' name='[Calculation_1098187290271764]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ AVG({ FIXED DATETRUNC(&apos;day&apos;, [order_date]) : COUNT([__tableau_internal_object_id__].[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]) }) }' />
+            </column>
+            <column caption='marts_sales_summary.csv' datatype='table' name='[__tableau_internal_object_id__].[marts_sales_summary.csv_62B3FC69A7EB40B387C7C4112FE43C56]' role='measure' type='quantitative' />
+            <column caption='Full Date' datatype='date' name='[full_date]' role='dimension' type='ordinal' />
+            <column-instance column='[full_date]' derivation='MY' name='[my:full_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Order Date' datatype='date' name='[order_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_1098187289452563]' derivation='Sum' name='[sum:Calculation_1098187289452563:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1098187290271764]' derivation='Sum' name='[sum:Calculation_1098187290271764:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_orders]' derivation='Sum' name='[sum:total_orders:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Orders' datatype='integer' name='[total_orders]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[my:full_date:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[my:full_date:ok]' member='201701' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201702' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201703' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201704' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201705' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201706' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201707' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201708' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201709' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201710' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201711' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201712' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201801' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201802' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201803' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201804' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201805' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201806' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201807' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201808' />
+              <groupfilter function='member' level='[my:full_date:ok]' member='201809' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[my:full_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]' value='24' />
+            <format attr='color' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]' value='#4e79a7' />
+            <format attr='font-weight' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]' value='bold' />
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]' value='n#,##0,K;-#,##0,K' />
+            <format attr='text-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <tooltip column='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:Calculation_1098187289452563:qk]' />
+              <tooltip column='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:Calculation_1098187290271764:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Total Orders:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontcolor='#4e79a7' fontsize='15'>Total Order Volume</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#4e79a7' fontsize='20'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_orders:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{9BA691FC-3EF0-4760-BC10-0E17A3D3A760}' />
+    </worksheet>
+    <worksheet name='KPI_Rvn'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt;&#10;&#10;</run>
+            <run bold='true' fontcolor='#000000' fontname='Tableau Bold' fontsize='10'>Insight:</run>
+            <run fontcolor='#000000' fontname='Tableau Bold'>Æ </run>
+            <run fontcolor='#000000' fontname='Tableau Book' fontsize='12'>&quot;Year 2018, Olist generated $8.7$ Million in total sales.&quot;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dim_date' name='federated.04fw5p90hdv65j1etj24t0p75c58' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fw5p90hdv65j1etj24t0p75c58'>
+            <column caption='Year_abc' datatype='string' name='[Calculation_1098187242323975]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='STR([year])' />
+            </column>
+            <column caption='Revenue YoY%' datatype='real' default-format='p0.0%' name='[Calculation_1098187294666773]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='(SUM([Calculation_1098187296120855]) - SUM([Calculation_1098187295821846])) / SUM([Calculation_1098187295821846])' />
+            </column>
+            <column caption='Revenue LY (2017)' datatype='real' name='[Calculation_1098187295821846]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [order_date] : SUM(IF YEAR([order_date]) = 2017 THEN [total_revenue] ELSE 0 END) }' />
+            </column>
+            <column caption='Revenue CY (2018)' datatype='real' name='[Calculation_1098187296120855]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [order_date] : SUM(IF YEAR([order_date]) = 2018 THEN [total_revenue] ELSE 0 END) }' />
+            </column>
+            <column-instance column='[year]' derivation='Attribute' name='[attr:year:qk]' pivot='key' type='quantitative' />
+            <column caption='Full Date' datatype='date' name='[full_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_1098187242323975]' derivation='None' name='[none:Calculation_1098187242323975:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column caption='Order Date' datatype='date' name='[order_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_1098187295821846]' derivation='Sum' name='[sum:Calculation_1098187295821846:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1098187296120855]' derivation='Sum' name='[sum:Calculation_1098187296120855:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_revenue]' derivation='Sum' name='[sum:total_revenue:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[full_date]' derivation='Month-Trunc' name='[tmn:full_date:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Revenue' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1098187294666773]' derivation='User' name='[usr:Calculation_1098187294666773:qk]' pivot='key' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_1098187242323975:nk]' member='&quot;2017&quot;' />
+              <groupfilter function='member' level='[none:Calculation_1098187242323975:nk]' member='&quot;2018&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:year:ok]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:year:ok]' />
+              <groupfilter function='member' level='[none:year:ok]' member='2017' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[tmn:full_date:qk]' included-values='in-range'>
+            <min>#2017-01-01 00:00:00#</min>
+            <max>#2018-09-30 00:00:00#</max>
+          </filter>
+          <slices>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[tmn:full_date:qk]</column>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]</column>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='color' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' value='#4e79a7' />
+            <format attr='font-size' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' value='24' />
+            <format attr='text-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' value='center' />
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' value='c&quot;$&quot;#,##0,,.0M;(&quot;$&quot;#,##0,,.0M)' />
+            <format attr='font-weight' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <tooltip column='[federated.04fw5p90hdv65j1etj24t0p75c58].[attr:year:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:year:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187294666773:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:Calculation_1098187296120855:qk]' />
+              <text column='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:Calculation_1098187295821846:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run>Æ&#10;&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#4e79a7' fontsize='15'>Total Revenue</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#4e79a7' fontsize='20'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#4e79a7' fontsize='12'>v.s yrs17 (20.1%)</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{37499CBD-C687-464B-BB43-2818FF1BEB0F}' />
+    </worksheet>
+    <worksheet name='MoM%'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Revenue MoM Growth %: &#10;</run>
+            <run fontcolor='#000000' fontsize='12'>Spikes in Nov 2017 (Black Friday).</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dim_date' name='federated.04fw5p90hdv65j1etj24t0p75c58' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fw5p90hdv65j1etj24t0p75c58'>
+            <column caption='Year_abc' datatype='string' name='[Calculation_1098187242323975]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='STR([year])' />
+            </column>
+            <column-instance column='[year_month]' derivation='Attribute' name='[attr:year_month:nk]' pivot='key' type='nominal' />
+            <column caption='Full Date' datatype='date' name='[full_date]' role='dimension' type='ordinal' />
+            <column caption='Month Name' datatype='string' name='[month_name]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1098187242323975]' derivation='None' name='[none:Calculation_1098187242323975:nk]' pivot='key' type='nominal' />
+            <column-instance column='[full_date]' derivation='None' name='[none:full_date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[month_name]' derivation='None' name='[none:month_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_revenue]' derivation='Sum' name='[pcdf:sum:total_revenue:qk:3]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='PctDiff'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column caption='Total Revenue' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+            <column caption='Year Month' datatype='string' name='[year_month]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_1098187242323975:nk]' member='&quot;2017&quot;' />
+              <groupfilter function='member' level='[none:Calculation_1098187242323975:nk]' member='&quot;2018&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:full_date:qk]' included-values='in-range'>
+            <min>#2017-01-01#</min>
+            <max>#2018-08-31#</max>
+          </filter>
+          <slices>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]</column>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:full_date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk:3]' field-type='quantitative' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk:3]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk:3]' value='p0%' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk:3]' />
+              <tooltip column='[federated.04fw5p90hdv65j1etj24t0p75c58].[attr:year_month:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Month:&#9;</run>
+                <run bold='true' fontcolor='#757575'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[attr:year_month:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>MoM Growth %:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk:3]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk:3]</rows>
+        <cols>([federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk] / [federated.04fw5p90hdv65j1etj24t0p75c58].[none:month_name:nk])</cols>
+      </table>
+      <simple-id uuid='{9BE8FE5C-E8D2-41B6-A09A-9F1F2324C0D1}' />
+    </worksheet>
+    <worksheet name='Sales Heatmap'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Revenue Seasonality </run>
+            <run fontsize='9'>(&lt;Sheet Name&gt;)</run>
+            <run>Æ&#10;</run>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='10'>Dark blue </run>
+            <run fontcolor='#000000' fontsize='12'>Indicated months were the &quot;hottest&quot;.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dim_date' name='federated.04fw5p90hdv65j1etj24t0p75c58' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fw5p90hdv65j1etj24t0p75c58'>
+            <column caption='Year_abc' datatype='string' name='[Calculation_1098187242323975]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='STR([year])' />
+            </column>
+            <column caption='Month Name' datatype='string' name='[month_name]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1098187242323975]' derivation='None' name='[none:Calculation_1098187242323975:nk]' pivot='key' type='nominal' />
+            <column-instance column='[month_name]' derivation='None' name='[none:month_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_revenue]' derivation='Sum' name='[sum:total_revenue:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Revenue' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_1098187242323975:nk]' member='&quot;2017&quot;' />
+              <groupfilter function='member' level='[none:Calculation_1098187242323975:nk]' member='&quot;2018&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:year:qk]' field-type='quantitative' max='2018' min='2017' range-type='fixed' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:year:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:year:qk]</rows>
+        <cols>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:month_name:nk]</cols>
+      </table>
+      <simple-id uuid='{76143DAD-02D0-4ABE-91B7-403F03D4DDAB}' />
+    </worksheet>
+    <worksheet name='WeeklyPulse'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000'>Revenue by Day of Week </run>
+            <run fontcolor='#000000' fontsize='12'>(2018)</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>People spend more on weekdays vs. weekends.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dim_date' name='federated.04fw5p90hdv65j1etj24t0p75c58' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04fw5p90hdv65j1etj24t0p75c58'>
+            <column caption='Year_abc' datatype='string' name='[Calculation_1098187242323975]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='STR([year])' />
+            </column>
+            <column caption='Day Name' datatype='string' name='[day_name]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Saturday&quot;' value='Sunday' />
+                <alias key='&quot;Sunday&quot;' value='Saturday' />
+              </aliases>
+            </column>
+            <column caption='Is Weekend' datatype='boolean' name='[is_weekend]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1098187242323975]' derivation='None' name='[none:Calculation_1098187242323975:nk]' pivot='key' type='nominal' />
+            <column-instance column='[day_name]' derivation='None' name='[none:day_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[is_weekend]' derivation='None' name='[none:is_weekend:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_revenue]' derivation='Sum' name='[sum:total_revenue:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Revenue' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_1098187242323975:nk]' member='&quot;2017&quot;' />
+              <groupfilter function='member' level='[none:Calculation_1098187242323975:nk]' member='&quot;2018&quot;' />
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:day_name:nk]' direction='DESC' using='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' />
+          <slices>
+            <column>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' value='c&quot;$&quot;#,##0,K;(&quot;$&quot;#,##0,K)' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:is_weekend:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Day:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[none:day_name:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Total Revenue:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]</rows>
+        <cols>[federated.04fw5p90hdv65j1etj24t0p75c58].[none:day_name:nk]</cols>
+      </table>
+      <simple-id uuid='{38BF5946-FCA6-4A45-813E-BC18D30BD98F}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Introduction'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='94292' id='3' param='vert' type-v2='layout-flow' w='98714' x='643' y='951'>
+            <zone fixed-size='113' h='13436' id='45' is-fixed='true' type-v2='layout-basic' w='98714' x='643' y='951'>
+              <zone h='13436' id='8' param='horz' type-v2='layout-flow' w='69217' x='643' y='951'>
+                <zone h='13436' id='83' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/GoldenDWH.png' type-v2='bitmap' w='21709' x='643' y='951'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='583' forceUpdate='true' h='13436' id='22' is-fixed='true' type-v2='text' w='47508' x='22352' y='951'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#1f2328' fontname='-apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji' fontsize='22'>Olist E-Commerce Data Lakehouse</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='13436' id='46' param='horz' type-v2='layout-flow' w='29497' x='69860' y='951'>
+                <zone forceUpdate='true' h='13436' id='23' type-v2='text' w='29497' x='69860' y='951'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontsize='15'>Project Oveview</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+            <zone fixed-size='612' h='72770' id='73' is-fixed='true' type-v2='layout-basic' w='98714' x='643' y='14387'>
+              <zone h='72770' id='14' param='horz' type-v2='layout-flow' w='49418' x='643' y='14387'>
+                <zone fixed-size='526' forceUpdate='true' h='66468' id='24' is-fixed='true' type-v2='text' w='49418' x='643' y='14387'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>📦 </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Strategic E-Commerce Analytics via Google Cloud BigQuery &amp; Modern Data Stack</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Transforms fragmented Brazilian e-commerce transaction logs into a high-performance </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Star Schema</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> for executive reporting. By automating the end-to-end flow from raw data to BI, we eliminated 100% of manual data preparation, providing a &quot;Single Source of Truth&quot; for Olist’s 9+ disparate datasets.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>🛠️ Methodology: The Medallion Architecture</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Implemented a modular </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>ELT (Extract, Load, Transform)</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> pipeline centered on data reliability and scalability:</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Ingestion (Bronze):</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Automated raw data extraction via </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Meltano</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> into </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Google BigQuery</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>, preserving full data lineage.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Transformation (Silver &amp; Gold):</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Fact/Dimension models, leveraged </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>dbt</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> to normalize schemas, standardize timestamps, and enforce </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>79+ automated data quality tests</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Analytics (Rose):</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Developed denormalized </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Data Marts</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> optimized for low-latency querying and executive-level visualization.</run>
+                    <run>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='72770' id='74' param='horz' type-v2='layout-flow' w='49296' x='50061' y='14387'>
+                <zone fixed-size='462' h='72770' id='70' is-fixed='true' param='vert' type-v2='layout-flow' w='49296' x='50061' y='14387'>
+                  <zone h='34839' id='54' is-centered='0' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/M2-olist-data-engineering/images/Olist_Star_Schema.png' type-v2='bitmap' w='49296' x='50061' y='14387'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='99' h='12723' id='75' is-fixed='true' type-v2='text' w='49296' x='50061' y='49226'>
+                    <formatted-text>
+                      <run>Æ&#10;</run>
+                      <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Quality &amp; Trust:</run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> Integrated </run>
+                      <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Great Expectations</run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> for data contract validation and </run>
+                      <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Tableau</run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> for high-fidelity KPI tracking (e.g., Year-over-Year growth).</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='204' h='25208' id='72' is-fixed='true' type-v2='text' w='49296' x='50061' y='61949'>
+                    <formatted-text>
+                      <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>🚀 Key Insight: August 2018 Performance</run>
+                      <run>Æ&#10;</run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>The final dashboard reveals a </run>
+                      <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>-4.13% YoY revenue dip</run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> in August 2018 despite stable order volumes (</run>
+                      <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>7,152 units</run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>). This engineered pipeline allows leadership to instantly pivot from </run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11' italic='true'>observing</run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> trends to </run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11' italic='true'>investigating</run>
+                      <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> root causes in the underlying product categories.</run>
+                      <run>Æ&#10;</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+            <zone fixed-size='68' h='8086' id='17' is-fixed='true' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='98714' x='643' y='87157'>
+              <zone h='8086' id='26' type-v2='dashboard-object' w='16479' x='643' y='87158'>
+                <button action='' button-type='text'>
+                  <button-visual-state>
+                    <caption>Design &amp; Planning</caption>
+                    <tooltip-text>Technical Blueprint</tooltip-text>
+                    <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                    <format attr='background-color' value='#a0cbe8' />
+                  </button-visual-state>
+                </button>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8086' id='60' type-v2='dashboard-object' w='16479' x='17122' y='87158'>
+                <button action='' button-type='text'>
+                  <button-visual-state>
+                    <caption>Meltano Ingestion</caption>
+                    <tooltip-text>Bronze Layer (Raw)</tooltip-text>
+                    <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                    <format attr='background-color' value='#4e79a7' />
+                  </button-visual-state>
+                </button>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8086' id='61' type-v2='dashboard-object' w='16479' x='33601' y='87158'>
+                <button action='' button-type='text'>
+                  <button-visual-state>
+                    <caption>dbt Transformation</caption>
+                    <tooltip-text>Staging &amp; Core models (Silver &amp; Gold Layers)</tooltip-text>
+                    <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                    <format attr='background-color' value='#4e79a7' />
+                  </button-visual-state>
+                </button>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8086' id='62' type-v2='dashboard-object' w='16479' x='50080' y='87158'>
+                <button action='' button-type='text'>
+                  <button-visual-state>
+                    <caption>dbt Test &amp; Great Expt</caption>
+                    <tooltip-text>Quality Assurance - 79+ automated tests and documentation</tooltip-text>
+                    <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                    <format attr='background-color' value='#a0cbe8' />
+                  </button-visual-state>
+                </button>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8086' id='63' type-v2='dashboard-object' w='16399' x='66559' y='87158'>
+                <button action='tabdoc:goto-sheet window-id=&quot;{A36318C8-FE36-4652-912A-C5E28F64B814}&quot;' button-type='text'>
+                  <button-visual-state>
+                    <caption>Rose Marts</caption>
+                    <tooltip-text>Marts Modeling &amp; Visualization: Building high-fidelity dashboards</tooltip-text>
+                    <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                    <format attr='background-color' value='#a0cbe8' />
+                  </button-visual-state>
+                </button>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                  <format attr='background-color' value='#ffffff96' />
+                </zone-style>
+              </zone>
+              <zone h='8086' id='47' type-v2='dashboard-object' w='16399' x='82958' y='87158'>
+                <button action='tabdoc:goto-sheet window-id=&quot;{2619FF75-B8E7-42E7-87DF-42DE3C093F75}&quot;' button-type='text'>
+                  <button-visual-state>
+                    <caption>BI - Demo</caption>
+                    <tooltip-text>Analytics &amp; BI: Sales Summary for Sales Department (Jan 2017 ~ Sept 2018)</tooltip-text>
+                    <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                    <format attr='background-color' value='#a0cbe8' />
+                  </button-visual-state>
+                </button>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='3806' id='98' param='horz' type-v2='layout-flow' w='98714' x='643' y='95243' />
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='104' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98098' id='103' param='vert' type-v2='layout-flow' w='98058' x='971' y='951'>
+                <zone fixed-size='99' h='13436' id='83' is-fixed='true' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/GoldenDWH.png' type-v2='bitmap' w='3883' x='971' y='951'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='583' forceUpdate='true' h='13436' id='22' type-v2='text' w='64884' x='4854' y='951'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#1f2328' fontname='-apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji' fontsize='22'>Olist E-Commerce Data Lakehouse</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='13436' id='23' type-v2='text' w='29291' x='69738' y='951'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontsize='15'>Project Oveview</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='526' forceUpdate='true' h='72771' id='24' type-v2='text' w='49102' x='971' y='14387'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>📦 </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Strategic E-Commerce Analytics via Google Cloud BigQuery &amp; Modern Data Stack</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Transforms fragmented Brazilian e-commerce transaction logs into a high-performance </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Star Schema</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> for executive reporting. By automating the end-to-end flow from raw data to BI, we eliminated 100% of manual data preparation, providing a &quot;Single Source of Truth&quot; for Olist’s 9+ disparate datasets.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>🛠️ Methodology: The Medallion Architecture</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Implemented a modular </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>ELT (Extract, Load, Transform)</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> pipeline centered on data reliability and scalability:</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Ingestion (Bronze):</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Automated raw data extraction via </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Meltano</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> into </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Google BigQuery</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>, preserving full data lineage.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Transformation (Silver &amp; Gold):</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Fact/Dimension models, leveraged </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>dbt</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> to normalize schemas, standardize timestamps, and enforce </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>79+ automated data quality tests</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Analytics (Rose):</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Developed denormalized </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>Data Marts</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> optimized for low-latency querying and executive-level visualization.</run>
+                    <run>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='271' h='34840' id='54' is-centered='0' is-fixed='true' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/M2-olist-data-engineering/images/Olist_Star_Schema.png' type-v2='bitmap' w='48956' x='50073' y='14387'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='99' h='12723' id='75' type-v2='text' w='48956' x='50073' y='49227'>
+                  <formatted-text>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Quality &amp; Trust:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> Integrated </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Great Expectations</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> for data contract validation and </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Tableau</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> for high-fidelity KPI tracking (e.g., Year-over-Year growth).</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='204' h='25208' id='72' type-v2='text' w='48956' x='50073' y='61950'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>🚀 Key Insight: August 2018 Performance</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>The final dashboard reveals a </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>-4.13% YoY revenue dip</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> in August 2018 despite stable order volumes (</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>7,152 units</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>). This engineered pipeline allows leadership to instantly pivot from </run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11' italic='true'>observing</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> trends to </run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11' italic='true'>investigating</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> root causes in the underlying product categories.</run>
+                    <run>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8086' id='26' type-v2='dashboard-object' w='16383' x='971' y='87158'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <caption>Design &amp; Planning</caption>
+                      <tooltip-text>Technical Blueprint</tooltip-text>
+                      <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                      <format attr='background-color' value='#a0cbe8' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8086' id='60' type-v2='dashboard-object' w='16384' x='17354' y='87158'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <caption>Meltano Ingestion</caption>
+                      <tooltip-text>Bronze Layer (Raw)</tooltip-text>
+                      <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                      <format attr='background-color' value='#4e79a7' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8086' id='61' type-v2='dashboard-object' w='16383' x='33738' y='87158'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <caption>dbt Transformation</caption>
+                      <tooltip-text>Staging &amp; Core models (Silver &amp; Gold Layers)</tooltip-text>
+                      <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                      <format attr='background-color' value='#4e79a7' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8086' id='62' type-v2='dashboard-object' w='16384' x='50121' y='87158'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <caption>dbt Test &amp; Great Expt</caption>
+                      <tooltip-text>Quality Assurance - 79+ automated tests and documentation</tooltip-text>
+                      <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                      <format attr='background-color' value='#a0cbe8' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8086' id='63' type-v2='dashboard-object' w='16262' x='66505' y='87158'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{A36318C8-FE36-4652-912A-C5E28F64B814}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Rose Marts</caption>
+                      <tooltip-text>Marts Modeling &amp; Visualization: Building high-fidelity dashboards</tooltip-text>
+                      <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                      <format attr='background-color' value='#a0cbe8' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#ffffff96' />
+                  </zone-style>
+                </zone>
+                <zone h='8086' id='47' type-v2='dashboard-object' w='16262' x='82767' y='87158'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{2619FF75-B8E7-42E7-87DF-42DE3C093F75}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>BI - Demo</caption>
+                      <tooltip-text>Analytics &amp; BI: Sales Summary for Sales Department (Jan 2017 ~ Sept 2018)</tooltip-text>
+                      <button-caption-font-style fontcolor='#4e79a7' fontname='Tableau Bold' />
+                      <format attr='background-color' value='#a0cbe8' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{DB2B070B-5701-4FD3-97ED-ED3A651EBFC0}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='What marts'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='10260' id='3' param='horz' type-v2='layout-flow' w='98540' x='730' y='951'>
+            <zone forceUpdate='true' h='10260' id='8' type-v2='text' w='53284' x='730' y='951'>
+              <formatted-text>
+                <run bold='true' fontcolor='#4e79a7' fontsize='20'>What is Rose Marts?</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='10260' id='5' type-v2='empty' w='45255' x='54014' y='951'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='78829' id='7' param='horz' type-v2='layout-flow' w='98540' x='730' y='11211'>
+            <zone h='78829' id='9' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/Marts.png' type-v2='bitmap' w='98540' x='730' y='11211'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='9009' id='26' param='horz' type-v2='layout-flow' w='98540' x='730' y='90040'>
+            <zone h='9009' id='28' type-v2='empty' w='48905' x='730' y='90040'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone forceUpdate='true' h='9009' id='29' type-v2='text' w='49635' x='49635' y='90040'>
+              <formatted-text>
+                <run bold='true' fontalignment='2' fontcolor='#4e79a7' fontsize='20'>How to use it?</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='35' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98098' id='34' param='vert' type-v2='layout-flow' w='98960' x='520' y='951'>
+                <zone forceUpdate='true' h='10260' id='8' type-v2='text' w='52340' x='520' y='951'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#4e79a7' fontsize='20'>What is Rose Marts?</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='78829' id='9' is-fixed='true' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/Marts.png' type-v2='bitmap' w='98960' x='520' y='11211'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='9009' id='29' type-v2='text' w='49740' x='49740' y='90040'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='2' fontcolor='#4e79a7' fontsize='20'>How to use it?</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8E4B7CE4-8064-4B98-9F58-F94D79733D12}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Why marts'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='32282' id='26' is-fixed='true' type-v2='layout-basic' w='35353' x='63917' y='951'>
+            <zone h='32282' id='27' param='horz' type-v2='layout-flow' w='35353' x='63917' y='951'>
+              <zone h='32282' id='25' is-centered='0' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/Rose.png' type-v2='bitmap' w='35353' x='63917' y='951'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='63972' id='28' param='vert' type-v2='layout-flow' w='63187' x='730' y='951'>
+            <zone fixed-size='94' forceUpdate='true' h='12128' id='12' is-fixed='true' type-v2='text' w='63187' x='730' y='951'>
+              <formatted-text>
+                <run bold='true' fontcolor='#4e79a7' fontsize='20'>Why is Rose Data Marts?</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='470' forceUpdate='true' h='51844' id='15' is-fixed='true' type-v2='text' w='63187' x='730' y='13079'>
+              <formatted-text>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>&apos;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>Centrol of True</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>&apos; Golden Data Lakehouse to Actionable Business Ready - </run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>Rose Marts</run>
+                <run>Æ&#10;&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>1. The Challenge (The &quot;Before&quot;)</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>    Data Silos:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Raw data is scattered and inconsistent.</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>    High Latency:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Complex queries on raw data are slow and expensive.</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Metric Drift:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Different teams reporting different &quot;Revenue&quot; numbers.</run>
+                <run>Æ&#10;&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>2. Strategic Benefits of Data Marts</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Performance:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Pre-aggregated tables reduce dashboard load times by up to 80%.</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Governance:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Fine-grained access control (Role-Based Access) ensures data security.</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Consistency:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Shared definitions for KPIs across the entire organization.</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='31690' id='8' param='horz' type-v2='layout-flow' w='35353' x='63917' y='33233'>
+            <zone forceUpdate='true' h='31690' id='18' type-v2='text' w='35353' x='63917' y='33233'>
+              <formatted-text>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>3. Key Outcomes  - Rose Marts</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Cost Efficiency:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Lower compute costs by querying smaller, modeled datasets.</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Self-Service BI:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Analysts can build reports without needing complex SQL joins.</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Reliability:</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Automated testing in the transformation layer (e.g., dbt tests) ensures data quality.</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='34126' id='29' param='horz' type-v2='layout-flow' w='98540' x='730' y='64923'>
+            <zone fixed-size='255' h='34126' id='32' is-centered='0' is-fixed='true' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/GoldenDWH.png' type-v2='bitmap' w='23996' x='730' y='64923'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='34126' id='16' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/Lineage Graph.png' type-v2='bitmap' w='74544' x='24726' y='64923'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1050' minheight='1050' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='46' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98098' id='45' param='vert' type-v2='layout-flow' w='98960' x='520' y='951'>
+                <zone fixed-size='94' forceUpdate='true' h='12128' id='12' type-v2='text' w='63458' x='520' y='951'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#4e79a7' fontsize='20'>Why is Rose Data Marts?</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='250' h='32282' id='25' is-centered='0' is-fixed='true' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/Rose.png' type-v2='bitmap' w='35502' x='63978' y='951'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='470' forceUpdate='true' h='51844' id='15' type-v2='text' w='63458' x='520' y='13079'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>&apos;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>Centrol of True</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>&apos; Golden Data Lakehouse to Actionable Business Ready - </run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>Rose Marts</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>1. The Challenge (The &quot;Before&quot;)</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>    Data Silos:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Raw data is scattered and inconsistent.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>    High Latency:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Complex queries on raw data are slow and expensive.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Metric Drift:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Different teams reporting different &quot;Revenue&quot; numbers.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>2. Strategic Benefits of Data Marts</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Performance:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Pre-aggregated tables reduce dashboard load times by up to 80%.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Governance:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Fine-grained access control (Role-Based Access) ensures data security.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Consistency:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Shared definitions for KPIs across the entire organization.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='31690' id='18' type-v2='text' w='35502' x='63978' y='33233'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>3. Key Outcomes  - Rose Marts</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Cost Efficiency:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Lower compute costs by querying smaller, modeled datasets.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Self-Service BI:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Analysts can build reports without needing complex SQL joins.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'>   Reliability:</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='12'> Automated testing in the transformation layer (e.g., dbt tests) ensures data quality.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='265' h='34126' id='32' is-centered='0' is-fixed='true' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/GoldenDWH.png' type-v2='bitmap' w='17100' x='520' y='64923'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='265' h='34126' id='16' is-fixed='true' is-scaled='1' param='//wsl.localhost/Ubuntu/home/vivian/_Project_M2_DataEngeering/Lineage Graph.png' type-v2='bitmap' w='81860' x='17620' y='64923'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{C419162C-1E2F-458D-92D1-ADE0A9F7D50A}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='sales_summ'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='9259' id='3' param='horz' type-v2='layout-flow' w='98540' x='730' y='951'>
+            <zone forceUpdate='true' h='9259' id='16' type-v2='text' w='73175' x='730' y='951'>
+              <formatted-text>
+                <run bold='true' fontcolor='#4e79a7' fontname='Benton Sans Book' fontsize='20'>Executive Sales Overview</run>
+                <run fontcolor='#4e79a7' fontname='Benton Sans Book' fontsize='20'>Æ </run>
+                <run fontcolor='#4e79a7' fontname='Benton Sans Book' fontsize='15'>(Jan 2017~ Aug 2018)</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#4e79a7' fontname='Tableau Light' fontsize='12'>Note: Results based on sample data of 5000.</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='141' h='9259' id='6' is-fixed='true' type-v2='empty' w='13595' x='73905' y='951'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='121' h='9259' id='5' is-fixed='true' type-v2='empty' w='11770' x='87500' y='951'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='37812' id='13' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='98540' x='730' y='28775'>
+            <zone h='37812' id='26' name='Sales Heatmap' w='49270' x='730' y='28775'>
+              <layout-cache type-h='fixed' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='37812' id='28' name='MoM%' w='49270' x='50000' y='28775'>
+              <layout-cache type-h='fixed' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='14760' id='8' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='98540' x='730' y='10210'>
+            <zone h='14744' id='17' name='KPI_Rvn' show-title='false' w='24635' x='730' y='10226'>
+              <layout-cache type-h='fixed' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#d4d4d4' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='1' />
+                <format attr='margin' value='4' />
+                <format attr='background-color' value='#b4b4b4' />
+              </zone-style>
+            </zone>
+            <zone h='14744' id='18' name='KPI_MoM%' show-title='false' w='24635' x='25365' y='10226'>
+              <layout-cache type-h='fixed' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#d4d4d4' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='1' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='14744' id='21' name='KPI_Order Volume' show-title='false' w='24635' x='50000' y='10226'>
+              <layout-cache type-h='fixed' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#d4d4d4' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='1' />
+                <format attr='margin' value='4' />
+                <format attr='background-color' value='#f5f5f58e' />
+              </zone-style>
+            </zone>
+            <zone h='14744' id='22' name='KPI_AOV' show-title='false' w='24635' x='74635' y='10226'>
+              <layout-cache type-h='cell' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#d4d4d4' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='1' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='32462' id='23' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='98540' x='730' y='66587'>
+            <zone fixed-size='661' h='32462' id='32' is-fixed='true' name='AoV' w='49270' x='730' y='66587'>
+              <layout-cache minwidth='100' type-h='fixed' type-w='scalable' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='32462' id='33' name='WeeklyPulse' w='49270' x='50000' y='66587'>
+              <layout-cache cell-count-w='7' type-h='fixed' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='3805' id='36' type-v2='empty' w='98540' x='730' y='24970'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1650' minheight='1650' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='66' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98098' id='65' param='vert' type-v2='layout-flow' w='98960' x='520' y='951'>
+                <zone forceUpdate='true' h='9259' id='16' type-v2='text' w='80885' x='520' y='951'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#4e79a7' fontname='Benton Sans Book' fontsize='20'>Executive Sales Overview</run>
+                    <run fontcolor='#4e79a7' fontname='Benton Sans Book' fontsize='20'>Æ </run>
+                    <run fontcolor='#4e79a7' fontname='Benton Sans Book' fontsize='15'>(Jan 2017~ Aug 2018)</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#4e79a7' fontname='Tableau Light' fontsize='12'>Note: Results based on sample data of 5000.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='108' h='14744' id='17' is-fixed='true' name='KPI_Rvn' show-title='false' w='24773' x='520' y='10226'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#b4b4b4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='108' h='14744' id='18' is-fixed='true' name='KPI_MoM%' show-title='false' w='24772' x='25293' y='10226'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='108' h='14744' id='21' is-fixed='true' name='KPI_Order Volume' show-title='false' w='24707' x='50065' y='10226'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f5f5f58e' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='108' h='14744' id='22' is-fixed='true' name='KPI_AOV' show-title='false' w='24708' x='74772' y='10226'>
+                  <layout-cache type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37812' id='26' is-fixed='true' name='Sales Heatmap' w='49480' x='520' y='28775'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37812' id='28' is-fixed='true' name='MoM%' w='49480' x='50000' y='28775'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='251' h='32462' id='32' is-fixed='true' name='AoV' w='49480' x='520' y='66587'>
+                  <layout-cache minwidth='100' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='251' h='32462' id='33' is-fixed='true' name='WeeklyPulse' w='49480' x='50000' y='66587'>
+                  <layout-cache cell-count-w='7' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{105AB220-F059-455F-B0CD-1B4B70B6222B}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='dashboard' maximized='true' name='Introduction'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{019D7FEC-6571-483A-8DCC-EFE058F96EE2}' />
+    </window>
+    <window class='dashboard' name='Why marts'>
+      <viewpoints />
+      <active id='16' />
+      <simple-id uuid='{AEE5937B-D032-4A87-834A-C617F56937F5}' />
+    </window>
+    <window class='dashboard' name='What marts'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{A36318C8-FE36-4652-912A-C5E28F64B814}' />
+    </window>
+    <window class='dashboard' name='sales_summ'>
+      <viewpoints>
+        <viewpoint name='AoV'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI_AOV'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI_MoM%'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI_Order Volume'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI_Rvn'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='MoM%'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sales Heatmap'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='WeeklyPulse'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{2619FF75-B8E7-42E7-87DF-42DE3C093F75}' />
+    </window>
+    <window class='worksheet' hidden='true' name='AoV'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{ED29F397-3AC4-41F8-A47B-A90C7977749C}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI_AOV'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:is_weekend:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{6D23DA3D-2D1C-4A5E-B32D-DBF11F559581}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI_MoM%'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.04fw5p90hdv65j1etj24t0p75c58].[usr:Calculation_1098187251060749:nk:2]' show-morefewerbutton='false' type='filter' />
+            <card param='[federated.04fw5p90hdv65j1etj24t0p75c58].[my:full_date:ok]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{10345AFB-280F-4049-8CE3-39DBFFB9D807}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI_Order Volume'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.04fw5p90hdv65j1etj24t0p75c58].[my:full_date:ok]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{1F9FE6AC-3EBB-4740-9567-02BF909368A6}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI_Rvn'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{FD3D744F-14B9-477C-A7B1-003DB08C2AC0}' />
+    </window>
+    <window class='worksheet' hidden='true' name='MoM%'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:full_date:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.04fw5p90hdv65j1etj24t0p75c58].[pcdf:sum:total_revenue:qk:3]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{4C01AAC5-10F3-4188-A781-168FCFBFB67C}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Sales Heatmap'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.04fw5p90hdv65j1etj24t0p75c58].[sum:total_revenue:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{96240192-4515-4285-8D6E-528CC6CF75E6}' />
+    </window>
+    <window class='worksheet' hidden='true' name='WeeklyPulse'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:Calculation_1098187242323975:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.04fw5p90hdv65j1etj24t0p75c58].[none:is_weekend:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{6A994E39-D7F9-4DFB-9303-DC6042BED01A}' />
+    </window>
+  </windows>
+</workbook>

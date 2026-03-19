@@ -16,12 +16,19 @@ SELECT
 
     EXTRACT(WEEK FROM full_date) AS week_of_year,
     EXTRACT(DAY FROM full_date) AS day_of_month,
-    EXTRACT(DAYOFWEEK FROM full_date) AS day_of_week,
+
+-- This shifts Sunday (1) to 7, and Monday (2) to 1
+    CASE 
+        WHEN EXTRACT(DAYOFWEEK FROM full_date) = 1 THEN 7
+        ELSE EXTRACT(DAYOFWEEK FROM full_date) - 1
+    END AS day_of_week,
 
     FORMAT_DATE('%A', full_date) AS day_name,
 
+    -- Adjusted weekend logic: Saturday is 6, Sunday is 7
     CASE 
-        WHEN EXTRACT(DAYOFWEEK FROM full_date) IN (1,7) THEN TRUE
+        WHEN EXTRACT(DAYOFWEEK FROM full_date) IN (1, 7) THEN TRUE
         ELSE FALSE
     END AS is_weekend
 FROM date_series
+ORDER BY full_date

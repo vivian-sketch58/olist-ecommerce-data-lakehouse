@@ -16,3 +16,7 @@ venv/
 __pycache__/
 .DS_Store
 
+# Ignore Tableau logs and extracts
+*.log
+*.hyper
+*.tde

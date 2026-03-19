@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![SQL](https://img.shields.io/badge/sql-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
+![BigQuery](https://img.shields.io/badge/Google_BigQuery-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 # 📦 Olist E-Commerce Data Lakehouse
 
 ## 📑 Project Title
@@ -29,15 +34,16 @@ A modular **ELT (Extract, Load, Transform)** architecture was implemented:
 * **[Milestone 1] Project Design & Planning ✅**
     * Data profiling and relationship mapping of raw Olist datasets.
     * Architectural blueprinting for Staging, Core, and Marts layers.
-    * **Status:** Client Approved.
+    * **Status:** Senior Management Approved.
 
 * **[Milestone 2] Infrastructure & Ingestion ✅**
     * **Environment Setup:** BigQuery project structure and IAM security configuration.
     * **Automated Ingestion:** Meltano pipelines implemented for robust EL (Extract & Load).
-    * **Status:** Raw data successfully landed in `BigQuery/olist_raw` (Initial landing in JSON format before Warehouse load).
+    * **Status:** Bronze Layer - Raw data successfully landed in `BigQuery/olist_raw` (Initial landing in JSON format before Warehouse load).
 
 * **[Milestone 3] Transformation & Quality Assurance ✅**
-    * **Core Modeling:** dbt transformation logic and Star Schema build.
+    * **Staging models** (Silver Layers)
+    * **Core Modeling:** dbt transformation logic and Star Schema build (Gold Layers).
     * **Data Quality:** Implementation of 79+ automated tests and documentation.
     * **Status:** Staging data in `olist_dwh_stg`; Fact and Dim tables live in `olist_dwh`.
 
@@ -58,13 +64,63 @@ A modular **ELT (Extract, Load, Transform)** architecture was implemented:
 
 ---
 
-## 📂 Project Components
+## 📂 Project Navigation & Documentation
 
-* **[Data Ingestion (Meltano)](./meltano-ingest-olist/)**
-    * Detailed documentation of the **Extract & Load (EL)** process, including source-to-target mapping and Meltano configuration.
-* **[Data Transformation (dbt)](./olist_ecommerce/)**
-    * Core logic for the **Star Schema** implementation. Includes staging models, fact/dimension builds, and the dbt test suite.
-* **[Project Planning & Design](./docs/)**
-    * Comprehensive **Project Proposal** and **Data Analytics Design** documents covering the initial profiling and architectural strategy.
-* **[Presentation & Insights](./docs/)**
-    * Executive presentation slides and **Tableau Storytelling** dashboards showcasing key business insights and logistics performance.
+This repository is organized into **modular layers**, following the **Modern Data Stack** architecture to ensure scalability and data integrity.
+
+---
+
+### 🏗️ Technical Blueprint
+The **Master Design Document** outlines the architectural foundation of the lakehouse:
+
+- **ELT Pipeline Design:** Mapping the flow from Source to BigQuery.
+- **Source-to-Target Mapping:** Detailed schema definitions and transformations.
+- **Conceptual Lineage Graph:** Visualization of data dependencies from Bronze to Gold.
+- 📘 **[Olist Data Lakehouse Technical Blueprint](./docs/Olist_Technical_Blueprint.pdf)**
+
+---
+
+### 📥 Data Ingestion (Meltano)
+The **Extract & Load (EL) layer**.  
+This directory contains the **Meltano configuration** used to automate the movement of raw Brazilian e-commerce data into the **BigQuery Lakehouse**. It manages the initial "Landing Zone" or Bronze layer.
+
+---
+
+### 🔄 Data Transformation (dbt)
+The **Transformation (T) layer**.  
+This is the core logic for the **Star Schema** implementation. It includes:
+
+- **Staging Models:** Initial cleaning, casting, and renaming of raw fields.
+- **Dimension and Fact Builds:** The "Gold Layer" optimized for high-performance BI queries.
+- **Data Quality:** **79+ automated tests** (Generic and Singular) to guarantee the single source of truth.
+
+---
+
+### 📊 Insights & Analytics
+The final "Business-Ready" deliverables for executive decision-making:
+
+- **Executive Presentation:** A comprehensive slide deck covering pipeline architecture and key insights.
+- 📑 **[View: Executive Presentation Slides](./docs/Olist E-Commerce Data Lakehouse Presentation.pdf)**
+- **Tableau Storytelling:** Interactive dashboards showcasing Logistics Performance, Revenue Growth (YoY/MoM), and Order Volume.
+- 🔗 **[Live Dashboard: Olist Rose Mart](YOUR_TABLEAU_PUBLIC_LINK_HERE)**
+
+
+---
+
+## 🏁 Conclusion & Key Takeaways
+
+This project served as a comprehensive application of the **Modern Data Stack** to solve real-world e-commerce data challenges. 
+
+### 🧠 Lessons Learned
+- **Data Quality as a Standard:** Implementing **79+ automated dbt tests** taught me that data reliability is the foundation of business trust.
+- **Architectural Efficiency:** Transitioning from normalized sources to a **Star Schema** (Gold Layer) significantly optimized query performance for Tableau.
+- **End-to-End Orchestration:** Leveraging **Meltano** and **dbt** demonstrated the power of "Analytics as Code" for repeatable, scalable data pipelines.
+
+### 🚀 Future Roadmap
+- **CI/CD Integration:** Automating dbt runs and testing via GitHub Actions.
+- **Advanced Analytics:** Integrating a machine learning layer for customer churn prediction.
+- **Real-time Processing:** Exploring streaming ingestion for live sales tracking.
+
+---
+*Developed by Vivian — [[My LinkedIn Profile](https://www.linkedin.com/in/vivian-%E5%BE%AE-cao-b00a6592/)]*
+

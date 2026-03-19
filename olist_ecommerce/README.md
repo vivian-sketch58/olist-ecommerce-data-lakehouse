@@ -28,12 +28,15 @@ The implementation followed a structured, professional dbt lifecycle to build a 
 
 ### 1. Environment & Project Initialization
 * **Project Setup:** Initialized to establish the standard directory structure.
+```bash
+pip freeze > requirements.txt
+```
 * **Dependency Management:** Configured packages.yml (v2.7+) to leverage dbt_utils to ensure the required dbt packages (like dbt_utils) installed:
 ```bash
 dbt init
 dbt deps
 ```
-### 2. ecurity & Connectivity: 
+### 2. Security & Connectivity: 
 Configured `profiles.yml` for secure BigQuery authentication and verified to ensure service account key and Project ID are correct:
 ```bash
 dbt debug
@@ -49,7 +52,7 @@ dbt debug
 
 ### 4. Staging & Data Cleaning
 * **Source Declaration:** Created `sources.yml` to map the `olist_raw` dataset, providing clear lineage and freshness tracking.
-* **Type Casting:**  Developed SQL models to cast the raw **STRING** data types into proper `INT`, `DATETIME`, and `NUMERIC` formats, ensuring data integrity from the start.
+* **Type Casting:**  Developed SQL models to cast the raw **STRING** data types into proper `INT`, `DATETIME`, `NUMERIC`formats and Currency (BRL or USD$), ensuring data integrity from the start.
 
 ### 5. Dimensional Modeling (The Star Schema)
 * **Core Modeling:** Built optimized **Fact** and **Dimension** tables using surrogate keys and normalized attributes.
@@ -77,7 +80,11 @@ dbt run --select stg_customers
 ### 8. Marts layer (Please refer to ~/marts/README.md)
 
 ## 🧪 Data Quality & Testing
-To ensure the warehouse remains a "Single Source of Truth," we have implemented **79+ automated tests** that run during the CI/CD and deployment phases.
+
+To ensure the Olist Lakehouse remains a **Single Source of Truth**, I implemented a multi-layered testing strategy covering both structural integrity and business logic.
+
+### 1. dbt Core Tests (Schema & Relationship Validation)
+We have leverage **79+ automated tests** that execute during the transformation layer to catch upstream data issues before they reach the Marts.
 
 * **Generic Tests:** `unique`, `not_null`, and `relationships` (referential integrity) across all primary and foreign keys.
 * **Singular Tests:** Custom SQL validations to catch business logic errors (e.g., ensuring `order_delivered_customer_date` is after `order_purchase_timestamp`).
@@ -86,6 +93,14 @@ To ensure the warehouse remains a "Single Source of Truth," we have implemented 
 ```bash
 dbt test
 ```
+### 2. Great Expectations (Data Contract Validation)
+For the **Bronze (Raw) to Silver (Staging)** transition, I utilized Great Expectations to enforce data contracts and prevent "Data Drift."
+
+* **Column Statistics:** Validated that payment_value is always positive and within expected standard deviations.
+
+* **Schema Enforcement:** Ensured that the raw ingestion from Meltano matches the expected types before hitting BigQuery.
+
+* **Data Completeness:** Verified that critical dimensions (like zip_code_prefix) maintain a 99%+ population rate.
 
 ## 📂 Documentation & Discovery
 We use dbt’s native documentation engine to provide a transparent view of the data's journey.

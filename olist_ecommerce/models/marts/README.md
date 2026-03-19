@@ -69,3 +69,24 @@ Your BigQuery project is now organized into **functional datasets**, representin
 | `olist_dwh` | Core **Star Schema** with Facts and Dimensions. |
 | `olist_dwh_marts` | Gold-standard data for **business users and BI tools** (final marts layer). |
 
+## 📂 Turn Marts tables to a Actionable Insight
+
+### 1.Query sales summary table from Marts in BigQuery
+
+ SELECT *,
+  FORMAT_DATE('%Y%m%d', order_date) AS join_key_int, -- Creates 20160913
+  CAST(order_date AS STRING) AS join_key_str        -- Creates 2016-09-13
+  FROM `marine-bebop-488207-j2.olist_dwh_marts.mart_sales_summary` LIMIT 5000
+
+  ### 2. Query dim_date table from core of warehouse
+
+-- This shifts the scale so Monday = 1
+MOD(EXTRACT(DAYOFWEEK FROM full_date) + 5, 7) + 1 AS day_of_week_monday_start
+
+
+
+
+
+  ### "Scheduled Extract"
+
+  **Manual Refresh:** On your desktop, you can right-click the BigQuery data source and select Extract > Refresh. This will pull the latest data from BigQuery into your local .hyper file.
