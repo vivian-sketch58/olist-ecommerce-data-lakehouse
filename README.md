@@ -1,6 +1,8 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![SQL](https://img.shields.io/badge/sql-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Meltano](https://img.shields.io/badge/Meltano-FF3E3E?style=for-the-badge&logo=Meltano&logoColor=white)
 ![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
+![Great Expectations](https://img.shields.io/badge/Great_Expectations-FF6600?style=for-the-badge&logo=great-expectations&logoColor=white)
 ![BigQuery](https://img.shields.io/badge/Google_BigQuery-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 # 📦 Olist E-Commerce Data Lakehouse
@@ -47,7 +49,7 @@ A modular **ELT (Extract, Load, Transform)** architecture was implemented:
     * **Data Quality:** Implementation of 79+ automated tests and documentation.
     * **Status:** Staging data in `olist_dwh_stg`; Fact and Dim tables live in `olist_dwh`.
 
-* **[Milestone 4] Analytics & Business Intelligence 🏗️**
+* **[Milestone 4] Analytics & Business Intelligence ✅**
     * **Marts Modeling:** Developing business-ready tables.
     * **Visualization:** Building high-fidelity dashboards.
     * **Status:** Marts tables in `olist_dwh_marts`; Tableau mockup is ready for review.
@@ -57,7 +59,7 @@ A modular **ELT (Extract, Load, Transform)** architecture was implemented:
     * **Monitoring:** Establishing data SLAs and pipeline health alerts.
     * **Status:** Planning phase for workflow automation.
 
-* **[Milestone 6] Presentation & Final Delivery 🚀**
+* **[Milestone 6] Presentation & Final Delivery ✅**
     * **Executive Handover:** Presentation to technical (CTOs, Engineering Directors) and business leadership (CFOs, COOs).
     * **Final Review:** Delivery of insights and project sign-off.
     * **Status:** Awaiting Final Client Approval.
@@ -96,13 +98,14 @@ This is the core logic for the **Star Schema** implementation. It includes:
 
 ---
 
-### 📊 Insights & Analytics
+### 📊 Final Deliverables
 The final "Business-Ready" deliverables for executive decision-making:
 
 - **Executive Presentation:** A comprehensive slide deck covering pipeline architecture and key insights.
-- 📑 **[View: Executive Presentation Slides](./docs/Olist E-Commerce Data Lakehouse Presentation.pdf)**
-- **Tableau Storytelling:** Interactive dashboards showcasing Logistics Performance, Revenue Growth (YoY/MoM), and Order Volume.
-- 🔗 **[Live Dashboard: Olist Rose Mart](YOUR_TABLEAU_PUBLIC_LINK_HERE)**
+- 📑 [**View: Executive Presentation Slides**](./docs/Olist%20E-Commerce%20Data%20Lakehouse%20Presentation.pdf)
+
+- **Tableau Storytelling:** This demo illustrates the pipeline from Rose Marts to BI, enabling leadership to perform root-cause analysis.
+- 🔗 **[Dashboard: Blue Rose Marts Preview](./docs/Olist%20-%20Rose%20Marts%20Preview.pdf)**
 
 
 ---
