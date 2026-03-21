@@ -1,3 +1,4 @@
+[⬅️ Back to Main Project](../../../README.md)
 ## 📊 Data Marts: Business Intelligence Layer
 
 ### 📖 Overview
@@ -10,15 +11,15 @@ These **“wide tables”** are designed to be plugged directly into BI tools su
 
 ### 🏗️ Model Directory
 
-We have developed **five core business-ready models**:
+* **Core Marts Portfolio:**
 
 | Model                       | Description                                                   |
 | --------------------------- | ------------------------------------------------------------- |
-| `mart_customer_orders`      | Customer-level summary of purchase behavior                   |
-| `mart_product_performance`  | Product sales, revenue, and popularity metrics                |
-| `mart_seller_performance`   | Seller performance including revenue and order volume         |
-| `mart_delivery_performance` | Shipping and delivery performance metrics                     |
-| `mart_payment_analysis`     | Payment types, installment patterns, and revenue contribution |
+| `marts_sales_summary`      | Revenue trends, total order volume, Average Average Order Value (AOV)                   |
+| `marts_product_performance`  | Top categories by revenue, items sold, rating vs. sales correlation                |
+| `marts_customer_geography`   | Orders by state, revenue by city, geographic delivery heatmaps         |
+| `mart_delivery_performance` | Delivery duration (days by state), shipping limits, delivery trends                     |
+| `mart_customer_analytics`     | Customer segmentation, repeat purchaser rates, total Customer Lifetime Value (CLV) |
 
 ---
 
@@ -73,18 +74,18 @@ Your BigQuery project is now organized into **functional datasets**, representin
 
 ### 1.Query sales summary table from Marts in BigQuery
 
+```bash
  SELECT *,
   FORMAT_DATE('%Y%m%d', order_date) AS join_key_int, -- Creates 20160913
   CAST(order_date AS STRING) AS join_key_str        -- Creates 2016-09-13
   FROM `marine-bebop-488207-j2.olist_dwh_marts.mart_sales_summary` LIMIT 5000
-
+```
   ### 2. Query dim_date table from core of warehouse
 
 -- This shifts the scale so Monday = 1
+```bash
 MOD(EXTRACT(DAYOFWEEK FROM full_date) + 5, 7) + 1 AS day_of_week_monday_start
-
-
-
+```
 
 
   ### "Scheduled Extract"

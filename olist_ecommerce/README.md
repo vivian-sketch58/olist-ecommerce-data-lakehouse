@@ -1,3 +1,4 @@
+[⬅️ Back to Main Project](../README.md)
 # 💎 Data Transformation: dbt Star Schema & Marts
 
 ## 📖 Overview
@@ -132,42 +133,44 @@ dbt docs generate --static
 ```bash
 tree -L 2
 ```
- .
+.
 ├── README.md
-├── data
-│   └── raw
+├── analyses
+├── dbt_packages
+│   ├── dbt_date
+│   ├── dbt_expectations
+│   └── dbt_utils
+├── dbt_project.yml
+├── dim_date.csv
 ├── logs
 │   └── dbt.log
-├── meltano-ingest-olist
-│   ├── README.md
-│   ├── analyze
-│   ├── catalog.json
-│   ├── extract
-│   ├── load
-│   ├── logs
-│   ├── meltano.yml
-│   ├── notebook
-│   ├── orchestrate
-│   ├── output
-│   ├── plugins
-│   ├── requirements.txt
-│   └── transform
-└── olist_ecommerce
-    ├── README.md
-    ├── analyses
-    ├── dbt_packages
-    ├── dbt_project.yml
-    ├── logs
-    ├── macros
-    ├── models
-    ├── package-lock.yml
-    ├── packages.yml
-    ├── profiles.yml
-    ├── seeds
-    ├── snapshots
-    ├── target
-    └── tests
-
-
-
-
+├── macros
+│   └── generate_schema_name.sql
+├── models
+│   ├── fact_geolocation.sql
+│   ├── fact_order_items.sql
+│   ├── fact_orders.sql
+│   ├── fact_payments.sql
+│   ├── fact_reviews.sql
+│   ├── marts
+│   ├── packages.yml
+│   ├── schema.yml
+│   ├── sources.yml
+│   ├── staging
+│   └── star
+├── package-lock.yml
+├── packages.yml
+├── profiles.yml
+├── seeds
+├── snapshots
+│   └── products_snapshot.sql
+├── target
+│   ├── compiled
+│   ├── graph.gpickle
+│   ├── graph_summary.json
+│   ├── manifest.json
+│   ├── partial_parse.msgpack
+│   ├── run
+│   ├── run_results.json
+│   └── semantic_manifest.json
+└── tests

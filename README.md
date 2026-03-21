@@ -62,7 +62,7 @@ A modular **ELT (Extract, Load, Transform)** architecture was implemented:
 * **[Milestone 6] Presentation & Final Delivery ✅**
     * **Executive Handover:** Presentation to technical (CTOs, Engineering Directors) and business leadership (CFOs, COOs).
     * **Final Review:** Delivery of insights and project sign-off.
-    * **Status:** Awaiting Final Client Approval.
+    * **Status:** Senior Management Approved.
 
 ---
 
@@ -95,8 +95,9 @@ This is the core logic for the **Star Schema** implementation. It includes:
 
 - **Staging Models:** Initial cleaning, casting, and renaming of raw fields.
 - **Dimension and Fact Builds:** The "Gold Layer" optimized for high-performance BI queries.
-- **Marts Models:** The 
-- **Data Quality:** **79+ automated tests** (Generic and Singular) to guarantee the single source of truth.
+- **Data Quality:** [**79+ automated tests Documentation**](./docs/dbt_test_results.png)
+(Generic and Singular) to guarantee the single source of truth.
+- 📖 [**View Lineage Graph**](./docs/dbt_Lineage_Graph.png)
 - 📖 [**View Full Transformation Documentation**](./olist_ecommerce/README.md)
 
 ---
