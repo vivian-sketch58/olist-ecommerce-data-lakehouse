@@ -85,6 +85,7 @@ The **Master Design Document** outlines the architectural foundation of the lake
 ### 📥 Data Ingestion (Meltano)
 The **Extract & Load (EL) layer**.  
 This directory contains the **Meltano configuration** used to automate the movement of raw Brazilian e-commerce data into the **BigQuery Lakehouse**. It manages the initial "Landing Zone" or Bronze layer.
+- 📖 [**View Full Ingestion Documentation**](./meltano-ingest-olist/README.md)
 
 ---
 
@@ -94,7 +95,18 @@ This is the core logic for the **Star Schema** implementation. It includes:
 
 - **Staging Models:** Initial cleaning, casting, and renaming of raw fields.
 - **Dimension and Fact Builds:** The "Gold Layer" optimized for high-performance BI queries.
+- **Marts Models:** The 
 - **Data Quality:** **79+ automated tests** (Generic and Singular) to guarantee the single source of truth.
+- 📖 [**View Full Transformation Documentation**](./olist_ecommerce/README.md)
+
+---
+
+### 🔄 Marts Models
+The **Marts layer** inlcudes 5 Core Marts Portfolio.
+
+The **Blue Rose Marts** represent the business-ready layer of the Olist data lakehouse, delivering essential, standardized metrics while enabling flexible customization to support diverse departmental needs.
+
+- 📖 [**View Full Marts Models Documentation**](./olist_ecommerce/models/marts/README.md)
 
 ---
 
