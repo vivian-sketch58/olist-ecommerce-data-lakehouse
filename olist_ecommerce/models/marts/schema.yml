@@ -6,6 +6,12 @@ models:
     description: Daily sales metrics including revenue, orders and average order value for BI dashboards.
     columns:
 
+      - name: order_date_key
+        description: surrogate key for the order date.
+        tests:
+          - not_null
+          - unique  
+          
       - name: order_date
         description: date when the order was placed.
         tests:
