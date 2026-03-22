@@ -138,5 +138,22 @@ This project served as a comprehensive application of the **Modern Data Stack** 
 - **Real-time Processing:** Exploring streaming ingestion for live sales tracking.
 
 ---
+
+## 🤝 Team Collaboration & Integrated Ecosystem - NTU M2G6 Data Engineering Group Project
+
+This repository focuses on the **Core ELT Pipeline & BigQuery Lakehouse**, and it was built as part of a collaborative team project. Our team shared a unified Gold Layer (Fact and Dimension tables) as our base source of truth.
+
+While my colleagues utilized the raw Fact/Dim data for their specific implementations, I developed an additional Business Layer (Rose Marts) to provide "Business-Ready" metrics for executive-level reporting:
+
+* **[Karl: Final Strategic Presentation](https://github.com/karlchee/assignment_Module2)** – A comprehensive executive summary of the project’s business impact.
+* **[Elaine: Advanced Python Analysis](https://github.com/elaineet1/olist-pipeline/blob/main/olist_analysis.ipynb)** – A Jupyter Notebook performing deep-dive statistical analysis on Olist delivery performance.
+* **[P-Pin: Looker Business Intelligence](https://lookerstudio.google.com/reporting/ed13ddd8-bc45-4ed7-9e4e-0e0e9f6262f3/page/JPRsF)** – An alternative visualization layer using other BigQuery data.
+* **[Robin: AI-Driven Implementation](https://github.com/robinlwong/keystone-nexus)** – An experimental version of the pipeline built purely through AI-prompt engineering.
+
+ **Note:** My repository includes a specialized Marts Layer (e.g., marts_sales_summary and my unique "Rose" marketing preview) designed to simplify complex joins into flat, high-performance tables for tools like Tableau.
+
+---
+
+
 *Developed by Vivian — [[My LinkedIn Profile](https://www.linkedin.com/in/vivian-%E5%BE%AE-cao-b00a6592/)]*
 
